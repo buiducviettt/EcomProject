@@ -1,0 +1,37 @@
+.dressStyle {
+    position: relative;
+
+    .itemImg {
+        border-radius: 20px;
+        position: relative;
+        height: 28.9rem;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            pointer-events: none; // Ngăn không cho lớp overlay nhận sự kiện hover
+            z-index: 1; // Đặt z-index để overlay ở dưới
+        }
+    }
+
+    h3 {
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%; // Căn giữa h3
+        transform: translate(-50%, -50%); // Căn giữa h3
+        z-index: 2; // Đặt z-index để h3 ở trên overlay
+        font-size: 3rem;
+        color: white;
+        font-weight: bold;
+        width: 100%;
+        transition: all 0.3s ease; // Thêm hiệu ứng chuyển tiếp
+        cursor: pointer;
+    }
+}

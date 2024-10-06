@@ -1,0 +1,26 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; // Chiều cao của mỗi thẻ con sẽ bằng chiều cao của thẻ cha
+
+    .inner {
+        flex-grow: 1; // Giúp phần tử này lấp đầy chiều cao thẻ cha
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; // Đảm bảo các nội dung trong thẻ inner được phân bố đều
+        padding: 20px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    h3 {
+        margin-bottom: 1rem; // Tạo khoảng cách giữa tiêu đề và nội dung
+        font-weight: bold;
+    }
+
+    p {
+        flex-grow: 1; // Giúp nội dung text lấp đầy phần còn lại nếu có
+    }
+}

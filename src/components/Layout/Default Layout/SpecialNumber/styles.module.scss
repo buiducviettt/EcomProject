@@ -1,0 +1,17 @@
+.wrapper{
+    span{
+        width:1px;
+        height: 74px;
+        background: var(--overlay-color);
+        display: block;
+        margin-left: 2rem;
+    }
+    p{
+        opacity: 0.6;
+    }
+    h3{
+        font-size:4rem ;
+        font-weight: bold;
+
+    }
+}

@@ -1,0 +1,63 @@
+.banner {
+    background: var(--background-color);
+    max-height: 66rem;
+    padding: 5rem 0;
+    position: relative;
+
+}
+
+.inner {
+    h1 {
+        font-size: 6rem;
+    }
+}
+
+.numberDetails {
+    gap: 4rem;
+}
+
+.bannerHome {
+    width: 100%;
+}
+
+.decor {
+
+    animation: pop 1.5s ease infinite;
+    /* Thêm hiệu ứng pop */
+
+    img {
+        width: 100%;
+        /* Đảm bảo ảnh SVG chiếm toàn bộ chiều rộng của div */
+        height: auto;
+        /* Giữ tỷ lệ khung hình */
+    }
+}
+
+.decor.decor1 {
+    width: 10rem;
+    position: absolute;
+    top: 20px;
+    right: 20rem;
+}
+
+.decor.decor2 {
+    width: 5rem;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+
+/* Định nghĩa hiệu ứng pop */
+@keyframes pop {
+    50% {
+        transform: scale(1.1);
+        /* Tăng kích thước lên 110% */
+        opacity: 1;
+        /* Tăng độ trong suốt lên 1 */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Trở về kích thước bình thường */
+    }
+}

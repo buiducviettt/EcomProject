@@ -1,0 +1,116 @@
+//font
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../../assets/fonts/Satoshi_Complete/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../../assets/fonts/Satoshi_Complete/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../../assets/fonts/Satoshi_Complete/Satoshi_Complete/Fonts/OTF/Satoshi-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../../assets/fonts/Satoshi_Complete/Satoshi_Complete/Fonts/OTF/Satoshi-BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Integral CF';
+    src: url('../../assets/fonts/Integral-CF/Demo_Fonts/Fontspring-DEMO-integralcf-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Integral CF';
+    src: url('../../assets/fonts/Integral-CF/Demo_Fonts/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Integral CF';
+    src: url('../../assets/fonts/Integral-CF/Demo_Fonts/Fontspring-DEMO-integralcf-italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Integral CF';
+    src: url('../../assets/fonts/Integral-CF/Demo_Fonts/Fontspring-DEMO-integralcf-bolditalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+}
+:root {
+    --overlay-color: #ccc;
+    --background-color: #F2F0F1;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  color: black;
+}
+h1,h2{
+    font-family: 'Integral CF', sans-serif;
+    font-weight: bold;
+}
+h2 {
+    font-size: 4.8rem;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* Áp dụng font cho toàn bộ body */
+body {
+    font-family: 'Satoshi',sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}

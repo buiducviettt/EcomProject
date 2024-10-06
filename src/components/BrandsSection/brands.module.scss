@@ -1,0 +1,21 @@
+.brandsSection {
+    padding: 2rem 0;
+    background: #000; // Nền đen
+}
+
+.brandsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10rem; // Khoảng cách giữa các hình
+    justify-content: center; // Căn giữa hình ảnh theo chiều ngang
+    align-items: center;
+}
+
+.brandImage {
+    width: 130px; // Kích thước hình ảnh tùy theo yêu cầu của bạn
+}
+
+.swiper {
+    width: 100% ; // Đặt chiều rộng 100% cho swiper
+    height: 100%; // Hoặc thiết lập chiều cao cụ thể
+}

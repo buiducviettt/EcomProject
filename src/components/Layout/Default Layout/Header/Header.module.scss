@@ -1,0 +1,50 @@
+$header-height: 38px; // Định nghĩa biến cho chiều cao
+.topHeader {
+    background-color: #000000; // Màu nền đen
+    width: 100%; // Độ rộng 100% của phần tử cha
+    height: $header-height; // Chiều cao cố định
+    padding: calc($header-height - 15px) 0; 
+    p{
+        margin-bottom: 0;
+        color: white;
+    }// Padding trên/dưới là 5px nhỏ hơn chiều cao
+}
+.mainHeader .inner {
+    padding: 35px 0;
+}
+.navLink,.hdAction {
+    display: flex;
+    gap: 2rem;
+}
+.hdAction {
+    a{
+        font-size: 2rem;
+    }
+}
+.hdSearch{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+ 
+.hdSearch input {
+            width: 100%;
+            padding: 0.625em 2.5em;
+            /* Tính toán padding theo em */
+            border-radius: 62px;
+            border: 1px solid var(--overlay-color);
+            width: 577px;
+            font-size: 1.6rem;
+            background: #F0F0F0;     
+            &:focus{
+                background: #F0F0F0;
+                
+            }      /* Kích thước font 1.6 lần kích thước gốc */     
+}
+.searchIcon{
+    position: absolute;
+    font-size: 2rem; 
+    color: var(--overlay-color);
+  left: 10px;
+}

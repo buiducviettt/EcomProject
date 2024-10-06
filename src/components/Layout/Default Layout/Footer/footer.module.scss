@@ -1,0 +1,62 @@
+.formFooter {
+  background: #000;
+  padding: 40px 40px;
+  border-radius: 20px;
+  h3 {
+    font-size: 40px;
+    color: white;
+    font-family: 'Integral CF,san-serif';
+    font-weight: bold;
+  }
+  input {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 1em 4em;
+    background: #fff;
+    border-radius: 64px;
+    &::placeholder {
+      text-align: center;
+    }
+  }
+  .ctaButton {
+    background: white;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .emailInput {
+    position: relative;
+    .emailIcon {
+      position: absolute;
+      bottom: 40%;
+      left: 20px;
+      font-size: 2rem;
+    }
+  }
+}
+.footer {
+  background: #f0f0f0;
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+  text-align: right;
+  h4 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  a {
+    font-size: 2rem;
+  }
+  p {
+    margin-top: 20px;
+  }
+  .iconSocial {
+    display: flex;
+    gap: 20px;
+  }
+  .colLogo {
+    text-align: left !important;
+  }
+}
+.notification {
+  color: green;
+}

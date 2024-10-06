@@ -1,0 +1,21 @@
+.productList {
+    display: flex;
+    flex-direction: row;
+   
+}
+.wrapper {
+    h2 {
+        text-align: center;
+    }
+}
+.viewAllBtn{
+    display: flex;
+    justify-content: center;
+ .viewAll {
+     background-color: white;
+     &:focus{
+        background-color: #f0f0f0;
+
+     }
+ }
+}

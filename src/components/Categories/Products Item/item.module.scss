@@ -1,0 +1,26 @@
+.productItem{
+        cursor: pointer;
+    .productImage {
+        border-radius: 20px;
+        height: 30rem;
+       transition: transform 0.3s ease;
+        img{
+            object-fit: contain;
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    h3,.price{
+        font-weight: bold;   
+    }
+    h3{
+        margin-top: 20px;
+    }
+    .price{
+        font-size: 2.4rem;
+    }
+    .rating{
+        font-size: 2rem;
+    }
+}
