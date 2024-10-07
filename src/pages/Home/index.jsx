@@ -18,7 +18,7 @@ const Homepage = () => {
                 title = "NEW COLLECTION"
             />
                <ProductList
-                category="jewelery"
+                category="women's clothing"
                 title = "TOP SELLING"
             />
             <div className={`container mt-5 ${styles.dressStyles}`}>
