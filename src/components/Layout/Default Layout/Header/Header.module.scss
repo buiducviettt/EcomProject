@@ -7,7 +7,12 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
     p{
         margin-bottom: 0;
         color: white;
+       
     }// Padding trên/dưới là 5px nhỏ hơn chiều cao
+    a{
+        font-weight: bold;
+        font-size: 2rem;
+    }
 }
 .mainHeader .inner {
     padding: 35px 0;
@@ -15,6 +20,11 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
 .navLink,.hdAction {
     display: flex;
     gap: 2rem;
+}
+.navLink{
+    a{
+        font-size: 2rem;
+    }
 }
 .hdAction {
     a{
@@ -34,7 +44,7 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
             /* Tính toán padding theo em */
             border-radius: 62px;
             border: 1px solid var(--overlay-color);
-            width: 577px;
+            width: 450px;
             font-size: 1.6rem;
             background: #F0F0F0;     
             &:focus{
