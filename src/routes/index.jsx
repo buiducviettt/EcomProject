@@ -9,7 +9,7 @@ export const publicRoutes =
             component: Homepage  
         },
         {
-        path: '/product/:productId', // Route cho trang chi tiết sản phẩm
+        path: '/product/:productId',
         component: ProductDetail
     }
       
