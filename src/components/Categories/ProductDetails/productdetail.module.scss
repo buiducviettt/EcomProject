@@ -1,19 +1,19 @@
-.productImage{
-    max-width: 400px;
-    transition: transform 0.3s ease;
-    &:hover{
-        transform: scale(1.1);
-    }
-}
-.wrapper{
-    border: 1px solid gray;
+
+.gallery {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 20px 20px;
-    
+    flex-direction: column;
 }
-.contentInner{
-    padding: 0 0 0 40px;
+
+.selectedImage {
+    width: 50%; // Chiều rộng cho ảnh lớn
+    cursor: pointer;
+}
+
+.thumbnail {
+    margin-top: 5rem;
+    cursor: pointer;
+width: 50%;
+    &:hover {
+        border: 2px solid #000; // Thêm border khi hover
+    }
 }
