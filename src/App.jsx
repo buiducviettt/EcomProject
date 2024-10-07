@@ -5,7 +5,7 @@ import 'normalize.css';
 
 function App() {
   return (
-    <Router>
+    <Router >
       <div>
         <Routes>
           {publicRoutes.map((route, index) => {

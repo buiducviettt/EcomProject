@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styles from './productlist.module.scss';
 import ProductItem from "../Products Item";
 import Button from "../../Button";
+import { Link } from "react-router-dom";
 const ProductList = ({category,title}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -30,8 +31,16 @@ const ProductList = ({category,title}) => {
             <h2>{title}</h2>
             <div className={`${styles.productList} mt-5`}>
                 <div className="row">
-      {products.map((product) => (
-        <ProductItem key={product.id} product={product} />
+                    {products.map((product) => (
+                        <div className="col col-md-3" key={product.id}>
+                        <Link                                   
+            to={`/product/${product.id}`} 
+            style={{ textDecoration: 'none', color: 'inherit' }} 
+                            ><ProductItem product={product} />
+                                
+        </Link>
+                            </div>
+                            
       ))}
                 </div>       
             </div>

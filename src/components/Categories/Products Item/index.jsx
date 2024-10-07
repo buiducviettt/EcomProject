@@ -2,7 +2,7 @@
 import styles from './item.module.scss'
 const ProductItem = ({ product }) => {
     return (
-        <div className={`col col-md-3 ${ styles.productItem }`}>
+        <div className={`${ styles.productItem }`}>
             <div className={styles.productImage}>
                 <img src={product.image} alt={product.title} />
             </div>
