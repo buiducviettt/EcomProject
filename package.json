@@ -3,20 +3,22 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://buiducviettt.github.io/EcomProject/",
+  "homepage": "https://buiducviettt.github.io/EcomProject/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "@tippyjs/react": "^4.2.6",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
@@ -26,6 +28,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
     "react-slick": "^0.30.2",
+    "react-sticky": "^6.0.3",
     "react-tippy": "^1.4.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.14"

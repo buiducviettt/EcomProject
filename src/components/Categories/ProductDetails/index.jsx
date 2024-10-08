@@ -4,6 +4,7 @@ import DefaultLayout from '../../Layout/Default Layout/index'
 import styles from './productdetail.module.scss'
 import Button from "../../Button";
 import Image from "../../../assets/image/Images";
+import StarRating from "../../StarRating";
 const ProductDetail = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState('');
@@ -80,11 +81,13 @@ const ProductDetail = () => {
                             <div className={styles.contentInner}>
                                 <a href="">{ `${product.category}`}</a>
                                 <h1>{product.title}</h1>
-                                <p>{` Rate: ${product.rating.rate}`}</p>
+                                <StarRating
+                                    rating={product.rating.rate}
+                                />
                                 <p>{`Price: ${product.price}`}</p>
                                 <p>{`${product.description}`}</p>
                                 <Button
-                                    actionName="Buy Now"
+                                    actionName="Add to Cart"
                                     
                                 />
                             </div>

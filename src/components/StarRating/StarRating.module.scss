@@ -1,0 +1,21 @@
+.starRating {
+    display: flex;
+
+    .star {
+        color: gold; // Màu sao đầy
+        margin-right: 2px; // Khoảng cách giữa các sao
+    }
+
+    .halfStar {
+        position: relative;
+
+        &:before {
+            content: '\f005'; // Biểu tượng sao đầy
+            color: gold;
+            position: absolute;
+            left: 0;
+            width: 50%; // Chỉ hiển thị nửa sao
+            overflow: hidden; // Ẩn phần bên ngoài
+        }
+    }
+}
