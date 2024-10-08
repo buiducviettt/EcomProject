@@ -17,3 +17,14 @@ width: 50%;
         border: 2px solid #000; // Thêm border khi hover
     }
 }
+.ctaWrapper{
+    display: flex;
+     align-items: center;
+    justify-content: space-between;
+}
+.priceItem{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+
+}

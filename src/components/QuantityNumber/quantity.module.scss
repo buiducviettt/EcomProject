@@ -1,0 +1,13 @@
+.wrapper{
+    display: flex;
+    gap: 10px;
+    button{
+        font-size: 20px;
+        padding: 0em .5em;
+        border: none;
+        max-height: 3rem;
+    }
+    .input{
+        font-size: 2rem;
+    }
+}

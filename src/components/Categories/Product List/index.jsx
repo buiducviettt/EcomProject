@@ -4,7 +4,6 @@ import styles from './productlist.module.scss';
 import ProductItem from "../Products Item";
 import Button from "../../Button";
 import { Link } from "react-router-dom";
-import StarRating from "../../StarRating";
 const ProductList = ({category,title}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);

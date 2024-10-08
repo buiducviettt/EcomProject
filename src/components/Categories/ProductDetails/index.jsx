@@ -5,9 +5,11 @@ import styles from './productdetail.module.scss'
 import Button from "../../Button";
 import Image from "../../../assets/image/Images";
 import StarRating from "../../StarRating";
+import QuantityNumber from "../../QuantityNumber";
 const ProductDetail = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState('');
+    const [noti,setNoti]=useState('')
     const [loading, setLoading] = useState(true);
      const [selectedImage, setSelectedImage] = useState('');
     // goi API 
@@ -84,12 +86,15 @@ const ProductDetail = () => {
                                 <StarRating
                                     rating={product.rating.rate}
                                 />
-                                <p>{`Price: ${product.price}`}</p>
+                                <p className={styles.priceItem}>{`Price: ${product.price}`}</p>
                                 <p>{`${product.description}`}</p>
+                              
+                               <div className={styles.ctaWrapper}>
+                                    <QuantityNumber />
                                 <Button
-                                    actionName="Add to Cart"
-                                    
-                                />
+                                    actionName="Add to Cart"                                   
+                                    />
+                                    </div>
                             </div>
                         </div>
                     </div>
