@@ -4,8 +4,12 @@ import Image from '../../../../assets/image/Images'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import { useCart } from '../../../CartContext'
+
 const Header = () => {
+  const { cartItems } = useCart();
+const cartQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
     const [isScroll, setisScroll] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
@@ -49,6 +53,7 @@ const Header = () => {
                         <div className={styles.hdAction}>
                             <Link to="/cart">
                                 <FontAwesomeIcon icon={faCartShopping} />
+                                 {cartQuantity > 0 && <span className={styles.cartQuantity}>{cartQuantity}</span>}
                             </Link>
                             <Link to="/account">
                                <FontAwesomeIcon icon={faUser} />

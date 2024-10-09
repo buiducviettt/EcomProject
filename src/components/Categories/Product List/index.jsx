@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from './productlist.module.scss';
 import ProductItem from "../Products Item";
-import Button from "../../Button";
+// import Button from "../../Button";
 import { Link } from "react-router-dom";
 const ProductList = ({category,title}) => {
     const [products, setProducts] = useState([]);
@@ -44,13 +44,13 @@ const ProductList = ({category,title}) => {
       ))}
                 </div>       
             </div>
-            <div className={styles.viewAllBtn}>
+            {/* <div className={styles.viewAllBtn}>
             <Button
                 className={styles.viewAll} 
                 actionName="View All"
                 color="black"
                 />
-                </div>
+                </div> */}
             </div>
     )
 }
