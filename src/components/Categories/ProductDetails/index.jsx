@@ -6,6 +6,7 @@ import Button from "../../Button";
 import Image from "../../../assets/image/Images";
 import StarRating from "../../StarRating";
 import QuantityNumber from "../../QuantityNumber";
+import ProductList from "../Product List";
 
 const ProductDetail = () => {
     const { productId } = useParams();
@@ -99,7 +100,10 @@ const ProductDetail = () => {
                     </div>
                 </div>
                 <div className="container mt-5">
-                    
+                    <ProductList
+                        title="You might also like"
+                       category={product.category}
+                    />
                 </div>
             </div>
         </DefaultLayout>
