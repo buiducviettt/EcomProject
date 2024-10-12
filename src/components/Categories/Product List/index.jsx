@@ -35,7 +35,7 @@ const ProductList = ({ category, title }) => {
             <div className={`${styles.productList} mt-5`}>
                 <div className="row">
                     {loading ? (
-                        <Skeleton count={1} height={500} width={500}/>
+                   <Skeleton count={1} height={300} width='100vw' />
                     ) : (
                         products.map((product) => (
                             <div className="col col-md-3" key={product.id}>
