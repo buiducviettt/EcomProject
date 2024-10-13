@@ -4,7 +4,10 @@ import styles from './productlist.module.scss';
 import ProductItem from "../Products Item";
 // import Button from "../../Button";
 import { Link } from "react-router-dom";
-const ProductList = ({category,title}) => {
+import Skeleton from "react-loading-skeleton";
+
+
+const ProductList = ({ category, title }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     //callAPI
@@ -22,27 +25,35 @@ const ProductList = ({category,title}) => {
                 setLoading(false);
             }
         };
-          fetchAPI();
-        
+        fetchAPI();
+
     }, [category])
-     if (loading) return <div>Loading...</div>;
+    //  if (loading) return <div>Loading...</div>;
     return (
-        <div className={ `mt-5 container ${styles.wrapper}`}>
+        <div className={`mt-5 container ${styles.wrapper} `}>
             <h2>{title}</h2>
             <div className={`${styles.productList} mt-5`}>
                 <div className="row">
-                    {products.map((product) => (
-                        <div className="col col-md-3" key={product.id}>
-                        <Link                                   
-            to={`/product/${product.id}`} 
-            style={{ textDecoration: 'none', color: 'inherit' }} 
-                            ><ProductItem product={product} />
-                                
-        </Link>
+                    {loading ? (
+                   <Skeleton count={1} height={300} width='100vw' />
+                    ) : (
+                        products.map((product) => (
+                            <div className="col col-md-3" key={product.id}>
+                                <Link
+                                    to={`/product/${product.id}`}
+                                    style={{ textDecoration: 'none', color: 'inherit' }}
+                                >
+                                    <ProductItem product={product} />
+
+                                </Link>
                             </div>
-                            
-      ))}
-                </div>       
+
+                        )
+
+
+
+                        ))}
+                </div>
             </div>
             {/* <div className={styles.viewAllBtn}>
             <Button
@@ -51,7 +62,7 @@ const ProductList = ({category,title}) => {
                 color="black"
                 />
                 </div> */}
-            </div>
+        </div>
     )
 }
 export default ProductList

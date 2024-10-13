@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+        import { useEffect, useState } from "react";
 import styles from './data.module.scss';
 import FeedbackLayout from "../Layout/FeedbackLayout";
 import { Swiper, SwiperSlide } from 'swiper/react';
