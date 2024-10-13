@@ -2,7 +2,8 @@
         cursor: pointer;
     .productImage {
         border-radius: 20px;
-        height: 30rem;
+        height: 30rem;    
+        padding: 20px;
        transition: transform 0.3s ease;
         img{
             object-fit: contain;

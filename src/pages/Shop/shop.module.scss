@@ -1,3 +1,8 @@
 .filterWrapper{
     border-right: .5px solid rgb(230, 230, 230);
+    li{
+        &:focus{
+            font-weight: bold;
+        }
+    }
 }

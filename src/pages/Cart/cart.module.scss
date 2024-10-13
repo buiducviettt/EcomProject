@@ -1,0 +1,13 @@
+.cartItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+.cartImage{
+   width: 50%;
+   padding: 40px;
+}
+p{
+    font-weight: bold;
+}
+}
