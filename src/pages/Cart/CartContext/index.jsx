@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { createContext, useState, useEffect } from 'react';
 export const CartContext = createContext();
 // eslint-disable-next-line react/prop-types
