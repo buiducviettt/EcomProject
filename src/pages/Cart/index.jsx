@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { CartContext } from './CartContext';
 import DefaultLayout from '../../components/Layout/Default Layout';
 import styles from './cart.module.scss';
+import Button from '../../components/Button';
 
 const Cart = () => {
   const { cart, removeProduct } = useContext(CartContext);
@@ -43,9 +44,10 @@ const Cart = () => {
                     <p>
                       Price: <span>${item.price}</span>
                     </p>
-                    <button onClick={() => removeProduct(item.id)}>
-                      Remove
-                    </button>
+                    <Button
+                      actionName="Remove"
+                      onClick={() => removeProduct(item.id)}
+                    />
                   </div>
                 </div>
               ))}

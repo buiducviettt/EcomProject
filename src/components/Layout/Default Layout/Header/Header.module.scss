@@ -36,6 +36,11 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
     flex-direction: row;
     align-items: center;
     position: relative;
+    .searchResult{
+            position: absolute;
+                width: 100%;
+               
+    }
 }
  
 .hdSearch input {
@@ -66,4 +71,55 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 9999;
     background: white;
+}
+// Header.module.scss
+
+.wrapper {
+    position: relative; // Đảm bảo header có vị trí tương đối để chứa các phần tử con
+
+    .hdSearch {
+        position: relative; // Để chứa kết quả tìm kiếm trong vị trí tương đối
+        z-index: 10; // Đảm bảo thanh tìm kiếm nằm trên các phần tử khác
+
+        // Input search
+        .inputSearch {
+            position: relative; // Để có thể định vị các phần tử con
+        }
+
+        // Kết quả tìm kiếm
+        .searchResult {
+            position: absolute; 
+            top: 100%; 
+            left: 0;
+            right: 0;
+            background-color: white; 
+            border: 1px solid #ccc; 
+            z-index: 20; 
+            max-height: 300px; 
+            overflow-y: auto; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+
+            table {
+                width: 100%; 
+                border-collapse: collapse; 
+
+                th,
+                td {
+                    padding: 10px; 
+                    border-bottom: 1px solid #ccc; 
+                    text-align: left; 
+                }
+
+                th {
+                    background-color: #f7f7f7; 
+                }
+            }
+
+            p {
+                margin: 0; 
+                padding: 10px; 
+                text-align: center;
+            }
+        }
+    }
 }
