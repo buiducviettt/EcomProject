@@ -49,16 +49,14 @@ const Header = () => {
     fetchProducts();
   }, []);
 
-  // Cập nhật giá trị searchInput khi người dùng nhập
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
   };
 
-  // Lọc sản phẩm dựa trên từ khóa tìm kiếm
   useEffect(() => {
+    setisSearching(true);
     const delayDebounce = setTimeout(() => {
       if (searchInput) {
-        setisSearching(true);
         const filteredProducts = products.filter((product) =>
           product.title.toLowerCase().includes(searchInput.toLowerCase()),
         );
@@ -69,7 +67,10 @@ const Header = () => {
       }
     }, 500);
 
-    return () => clearTimeout(delayDebounce);
+    return () => {
+      clearTimeout(delayDebounce);
+      setisSearching(false);
+    };
   }, [searchInput, products]);
 
   return (
