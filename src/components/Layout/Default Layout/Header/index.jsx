@@ -2,6 +2,8 @@ import styles from './Header.module.scss';
 import Image from '../../../../assets/image/Images';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext } from 'react';
+import { CartContext } from '../../../../pages/Cart/CartContext';
 import {
   faMagnifyingGlass,
   faCartShopping,
@@ -10,11 +12,13 @@ import {
 import { useEffect, useState } from 'react';
 
 const Header = () => {
+  const { cart } = useContext(CartContext);
   const [isScroll, setisScroll] = useState(false);
   const [searchInput, setSearchInput] = useState(''); // State lưu giá trị tìm kiếm
   const [searchResult, setSearchResult] = useState([]); // State lưu kết quả tìm kiếm
   const [isSearching, setisSearching] = useState(false); // State kiểm tra quá trình tìm kiếm
   const [products, setProducts] = useState([]); // State lưu tất cả sản phẩm từ API
+  const totalItem = cart.reduce((total, item) => total + item.quantity, 0);
 
   // Xử lý sự kiện cuộn trang để thay đổi CSS
   useEffect(() => {
@@ -115,38 +119,40 @@ const Header = () => {
                 />
               </div>
               {/* Hiển thị kết quả tìm kiếm trong bảng */}
-              <div className={styles.searchResult}>
-                {isSearching ? (
-                  <p>Searching....</p>
-                ) : (
-                  <div>
-                    {searchResult.length > 0 ? (
-                      <table className={styles.resultTable}>
-                        <thead>
-                          <tr>
-                            <th>Title</th>
-                            <th>Price</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {searchResult.map((item) => (
-                            <tr key={item.id}>
-                              <td>
-                                <Link to={`/product/${item.id}`}>
-                                  {item.title}
-                                </Link>
-                              </td>
-                              <td>${item.price}</td>
+              {searchInput && (
+                <div className={styles.searchResult}>
+                  {isSearching ? (
+                    <p>Searching....</p>
+                  ) : (
+                    <div>
+                      {searchResult.length > 0 ? (
+                        <table className={styles.resultTable}>
+                          <thead>
+                            <tr>
+                              <th>Title</th>
+                              <th>Price</th>
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    ) : (
-                      <p>No results found.</p>
-                    )}
-                  </div>
-                )}
-              </div>
+                          </thead>
+                          <tbody>
+                            {searchResult.map((item) => (
+                              <tr key={item.id}>
+                                <td>
+                                  <Link to={`/product/${item.id}`}>
+                                    {item.title}
+                                  </Link>
+                                </td>
+                                <td>${item.price}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      ) : (
+                        <p>No results found.</p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
                 className={styles.searchIcon}
@@ -155,9 +161,19 @@ const Header = () => {
 
             {/* Cart and Account Icons */}
             <div className={styles.hdAction}>
-              <Link to="/cart">
-                <FontAwesomeIcon icon={faCartShopping} />
-              </Link>
+              <div className={styles.cart}>
+                <Link to="/cart">
+                  <FontAwesomeIcon
+                    icon={faCartShopping}
+                    className={styles.cartIcon}
+                  />
+                </Link>
+                {/* hiển thị số lượng cart  */}
+                <div className={styles.cartCount}>
+                  <span>{totalItem}</span>
+                </div>
+              </div>
+
               <Link to="/account">
                 <FontAwesomeIcon icon={faUser} />
               </Link>

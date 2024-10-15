@@ -123,3 +123,17 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
         }
     }
 }
+.hdAction{
+    position: relative;
+    .cartCount {
+            position: absolute;
+            top: -20px;
+            right: 30%;
+            span{
+                color: red;
+                font-weight: bold;
+            }
+        }
+   
+}
+ 
