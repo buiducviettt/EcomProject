@@ -136,4 +136,34 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
         }
    
 }
+
+// RESPONSIVE
+@media (max-width: 768px) {
+
+  .topHeader {
+    padding: 30px 0 ;
+  a{
+    display: block;
+    text-align: center;   
+  }
+}
+ .mainHeader {
+     .navLink,.hdSearch {
+         display: none;
+     }
+     
+     
+     
+ }
+
+   
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // Styles cho tablet
+}
+
+@media (min-width: 1025px) {
+    // Styles cho desktop
+}
  

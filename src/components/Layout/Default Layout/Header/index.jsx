@@ -102,10 +102,18 @@ const Header = () => {
 
             {/* Navigation Links */}
             <div className={styles.navLink}>
-              <Link to="/shop">Shop</Link>
-              <Link to="/sale">On Sale</Link>
-              <Link to="/new-arrival">New Arrivals</Link>
-              <Link to="/brands">Brands</Link>
+              <Link to="/shop" className={styles.link}>
+                Shop
+              </Link>
+              <Link to="/sale" className={styles.link}>
+                On Sale
+              </Link>
+              <Link to="/new-arrival" className={styles.link}>
+                New Arrivals
+              </Link>
+              <Link to="/brands" className={styles.link}>
+                Brands
+              </Link>
             </div>
 
             {/* Search Input */}

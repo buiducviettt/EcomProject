@@ -4,20 +4,47 @@
     align-items: center;
     gap: 40px;
 .cartImage{
-   width: 50%;
+   width: 40%;
    padding: 40px;
 }
-p{
+h3{
+    font-size: 2rem;
     font-weight: bold;
 }
 }
 .tableInfo{
-    th, tr{
+    span{
         font-size: 2rem;
     }
-   .tableRow{
-        display: flex;  
+    .row{
+        display: flex;
         justify-content: space-between;
-        gap: 2rem;
     }
+     
+
+}
+.cartList,.tableWrapper{
+    border: 1px solid rgb(190, 187, 187);
+    border-radius: 20px;
+    width: 100%;
+    padding: 20px 20px;
+
+}
+.title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .trashIcon{
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+.checkOut{
+    width: 100%;
+    margin-top: 2rem;
+}
+.line{
+    width: 100%;
+  height: 1px;
+    background: rgb(190, 187, 187);
 }

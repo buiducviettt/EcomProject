@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
 import 'normalize.css';
-import 'aos/dist/aos.css'; // Import file CSS của AOS
+import './responsive.scss';
 
 function App() {
   return (

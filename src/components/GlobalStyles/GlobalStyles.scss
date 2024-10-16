@@ -105,6 +105,9 @@ li {
 html {
     font-size: 62.5%;
 }
+html,body{
+    overflow-x: hidden;
+}
 
 /* Áp dụng font cho toàn bộ body */
 body {
@@ -112,5 +115,7 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
+
+
+
