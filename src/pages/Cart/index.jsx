@@ -8,6 +8,22 @@ import Button from '../../components/Button';
 const Cart = () => {
   const { cart, removeProduct } = useContext(CartContext);
   const [total, setTotal] = useState(0);
+  const [message, setMessage] = useState('');
+  const handleSubmit = () => {
+    alert('Tính năng đang build');
+  };
+  // addVoucher
+  const [searchInput, setSearchInput] = useState('');
+  const [addVoucher, setAddVoucher] = useState('');
+  const handleClick = () => {
+    if (searchInput.trim()) {
+      setMessage('Voucher đã được add thành công');
+      setAddVoucher(searchInput);
+      setSearchInput('');
+    } else {
+      setAddVoucher('');
+    }
+  };
   useEffect(() => {
     const calculatedTotal = cart.reduce((accumulator, item) => {
       return accumulator + item.price * item.quantity;
@@ -20,11 +36,12 @@ const Cart = () => {
     return (
       <DefaultLayout>
         <div className="container">
-          <h1>Your cart is empty</h1>
+          <h1 className={styles.titleEmpty}>Your cart is empty</h1>
         </div>
       </DefaultLayout>
     );
   }
+
   return (
     <DefaultLayout>
       <div className="container">
@@ -65,14 +82,40 @@ const Cart = () => {
             <div className={styles.tableWrapper}>
               <div className={styles.tableInfo}>
                 <div className={styles.row}>
-                  <span>Subtotal</span>
+                  <span className={styles.title}>Subtotal</span>
                   <span>{total}</span>
+                </div>
+                {/* Voucher */}
+                <div className={styles.voucherRow}>
+                  <span className={styles.title}>
+                    Voucher:
+                    <span>{addVoucher}</span>
+                  </span>
                 </div>
                 <div className={styles.row}>
-                  <span>Total</span>
+                  <span className={styles.title}>Total</span>
                   <span>{total}</span>
                 </div>
-                <Button actionName="Check out" className={styles.checkOut} />
+                <div className={`${styles.voucherInput} d-flex mt-5 `}>
+                  <input
+                    type="text"
+                    onChange={(e) => setSearchInput(e.target.value)}
+                    className={`form-control ${styles.inputVoucher}`}
+                    placeholder="Add a voucher"
+                  />
+                  <Button
+                    onClick={handleClick}
+                    actionName="Apply"
+                    className={styles.addVoucherBtn}
+                    value={searchInput}
+                  />
+                </div>
+                {message && <p>{message}</p>}
+                <Button
+                  actionName="Check out"
+                  className={styles.checkOut}
+                  onClick={handleSubmit}
+                />
               </div>
             </div>
           </div>

@@ -44,7 +44,9 @@ const Shop = () => {
                     cursor: 'pointer',
                     marginTop: '20px',
                     fontSize: '2rem',
+                    textTransform: 'uppercase',
                   }}
+                  className={styles.titleCategory}
                   key={category}
                   onClick={() => {
                     setSelectedCategory(category);
