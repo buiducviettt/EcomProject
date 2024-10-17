@@ -17,8 +17,8 @@ const Cart = () => {
   const [addVoucher, setAddVoucher] = useState('');
   const handleClick = () => {
     if (searchInput.trim()) {
-      setMessage('Voucher đã được add thành công');
       setAddVoucher(searchInput);
+      setMessage('Voucher đã được add thành công');
       setSearchInput('');
     } else {
       setAddVoucher('');

@@ -151,6 +151,13 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
      .navLink,.hdSearch {
          display: none;
      }
+     .searchMobile{
+        font-size: 2rem;
+     }
+     .cartCount{
+        position: absolute;
+        right: 25px;
+     }
      
      
      
@@ -165,5 +172,8 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
 
 @media (min-width: 1025px) {
     // Styles cho desktop
+    .searchMobile{
+        display: none;
+    }
 }
  

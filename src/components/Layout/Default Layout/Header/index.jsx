@@ -170,6 +170,10 @@ const Header = () => {
 
             {/* Cart and Account Icons */}
             <div className={styles.hdAction}>
+              {/* For Mobile Search */}
+              <div className={styles.searchMobile}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </div>
               <div className={styles.cart}>
                 <Link to="/cart">
                   <FontAwesomeIcon

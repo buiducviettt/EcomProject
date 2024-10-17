@@ -6,3 +6,26 @@
         text-align: center;
     }
 }
+//responsive
+@media (max-width: 768px) {
+
+    .dressStyles {
+        padding: 50px 0;
+      
+        .row {
+            margin-top: 20px;
+           display: flex;
+           flex-direction: column;
+           gap: 20px;
+            
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // Styles cho tablet
+}
+
+@media (min-width: 1025px) {
+    // Styles cho desktop
+}

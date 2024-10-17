@@ -1,6 +1,5 @@
 .banner {
     background: var(--background-color);
-    max-height: 66rem;
     padding: 5rem 0;
     position: relative;
 
@@ -60,4 +59,54 @@
         transform: scale(1);
         /* Trở về kích thước bình thường */
     }
+}
+
+
+
+
+//RESPONSIVE
+@media (max-width: 768px) {
+   .banner {
+    .bannerHomeWrapper{
+        position: relative;
+        .decor1,.decor2{
+            position: absolute;
+        }
+        .decor1{
+            right: 0;
+            top: 0;
+        }
+        .decor2{
+            left: 0;
+           top: 40%;
+        }
+    }
+    h1{
+        font-size:3rem;
+    }
+    .bannerHome {
+        position: relative;
+        
+    }
+    .button{
+        width: 100%;
+    }
+    .numberDetails{
+        flex-direction: column;     
+        align-items: center;
+    }
+
+   }
+   
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // Styles cho tablet
+    
+}
+
+@media (min-width: 1025px) {
+
+    
 }

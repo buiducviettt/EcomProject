@@ -33,19 +33,19 @@ const Homepage = () => {
           data-aos="fade-up"
         >
           <h2>BROWSE BY DRESS STYLE</h2>
-          <div className="row mt-5">
-            <div className="col col-md-4">
+          <div className={`row mt-5 ${styles.row}`}>
+            <div className="col- col-md-4">
               <StyleItem title="Casual" image={Image.styleitem1} />
             </div>
-            <div className="col col-md-8">
+            <div className="col - col-md-8 ">
               <StyleItem title="Formal" image={Image.styleitem2} />
             </div>
           </div>
-          <div className="row mt-5">
-            <div className="col col-md-8">
+          <div className={`row mt-5 ${styles.row}`}>
+            <div className="col- col-md-8 ">
               <StyleItem title="Party" image={Image.styleitem3} />
             </div>
-            <div className="col col-md-4">
+            <div className="col- col-md-4">
               <StyleItem title="Gym" image={Image.styleitem4} />
             </div>
           </div>
