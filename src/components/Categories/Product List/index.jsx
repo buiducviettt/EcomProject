@@ -6,7 +6,6 @@ import ProductItem from '../Products Item';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
 
 const ProductList = ({ category, title }) => {
   const [products, setProducts] = useState([]);
@@ -46,7 +45,7 @@ const ProductList = ({ category, title }) => {
     <div className={`mt-5 container ${styles.wrapper} `}>
       <h2>{title}</h2>
       {isMobile ? (
-        <Swiper spaceBetween={10} slidesPerView={3}>
+        <Swiper spaceBetween={50} slidesPerView={2}>
           <div className={`${styles.productList} mt-5`}>
             <div className="row">
               {loading ? (

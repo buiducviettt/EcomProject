@@ -60,3 +60,23 @@
 .notification {
   color: green;
 }
+//responsive
+@media (max-width: 768px) {
+  .formFooter{
+    margin-top: 0 !important;
+    padding: 40px 20px;
+    border-radius: unset;
+  }
+  .footer{
+    text-align: left;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  // Styles cho tablet
+}
+
+@media (min-width: 1025px) {
+  // Styles cho desktop
+}
