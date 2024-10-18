@@ -98,7 +98,7 @@ const Header = () => {
       >
         <p>
           Sign up and get 20% off to your first order.{' '}
-          <Link to="/sign-up">Sign Up Now</Link>
+          <Link to="/login">Sign Up Now</Link>
         </p>
       </div>
 
