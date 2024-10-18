@@ -8,7 +8,7 @@ import 'swiper/css'; // Import Swiper styles
 
 const FeedbackData = () => {
   const [feedbacks, setFeedback] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [isMobile, setisMobile] = useState(false);
 
   useEffect(() => {
@@ -19,10 +19,8 @@ const FeedbackData = () => {
         );
         const data = await response.json();
         setFeedback(data);
-        setLoading(false);
       } catch (error) {
         console.error(`The error is ${error}`);
-        setLoading(false);
       }
     };
     fetchAPI();
