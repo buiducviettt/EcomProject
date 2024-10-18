@@ -1,8 +1,9 @@
 import styles from './Header.module.scss';
 import Image from '../../../../assets/image/Images';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
+import { AuthContext } from '../../../Account/AccountContext';
 import { CartContext } from '../../../../pages/Cart/CartContext';
 import {
   faMagnifyingGlass,
@@ -19,6 +20,9 @@ const Header = () => {
   const [isSearching, setisSearching] = useState(false); // State kiểm tra quá trình tìm kiếm
   const [products, setProducts] = useState([]); // State lưu tất cả sản phẩm từ API
   const totalItem = cart.reduce((total, item) => total + item.quantity, 0);
+  const { user, logout } = useContext(AuthContext);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
 
   // Xử lý sự kiện cuộn trang để thay đổi CSS
   useEffect(() => {
@@ -48,6 +52,16 @@ const Header = () => {
     };
     fetchProducts();
   }, []);
+
+  // ACTION
+  const handleUserIconClick = () => {
+    setShowDropdown(!showDropdown);
+  };
+  const handleLogout = () => {
+    logout();
+    setShowDropdown(false);
+    navigate('/');
+  };
 
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
@@ -105,13 +119,25 @@ const Header = () => {
               <Link to="/shop" className={styles.link}>
                 Shop
               </Link>
-              <Link to="/sale" className={styles.link}>
+              <Link
+                to="/sale"
+                className={styles.link}
+                onClick={(e) => e.preventDefault()} // tạm thời chưa deploy
+              >
                 On Sale
               </Link>
-              <Link to="/new-arrival" className={styles.link}>
+              <Link
+                to="/new-arrival"
+                className={styles.link}
+                onClick={(e) => e.preventDefault()}
+              >
                 New Arrivals
               </Link>
-              <Link to="/brands" className={styles.link}>
+              <Link
+                to="/brands"
+                className={styles.link}
+                onClick={(e) => e.preventDefault()}
+              >
                 Brands
               </Link>
             </div>
@@ -187,9 +213,29 @@ const Header = () => {
                 </div>
               </div>
 
-              <Link to="/account">
-                <FontAwesomeIcon icon={faUser} />
-              </Link>
+              {/* Khi chưa đăng nhập qua trang đăng nhập , có rồi thì hover dropdown */}
+              {user ? (
+                <div className={styles.userIcon} onClick={handleUserIconClick}>
+                  <FontAwesomeIcon icon={faUser} />
+                  {showDropdown && (
+                    <div className={styles.dropdown}>
+                      <Link to="/account" className={styles.dropdownItem}>
+                        Thông tin
+                      </Link>
+                      <button
+                        onClick={handleLogout}
+                        className={styles.dropdownItem}
+                      >
+                        Đăng xuất
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link to="/account">
+                  <FontAwesomeIcon icon={faUser} />
+                </Link>
+              )}
             </div>
           </div>
         </div>

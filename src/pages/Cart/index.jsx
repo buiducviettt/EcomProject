@@ -64,10 +64,10 @@ const Cart = () => {
                           onClick={() => removeProduct(item.id)}
                         />
                       </div>
-                      <p>
+                      <p style={{ fontSize: '2rem' }}>
                         Quantity: <span>{item.quantity}</span>
                       </p>
-                      <p>
+                      <p style={{ fontSize: '2rem' }}>
                         Price: <span>${item.price}</span>
                       </p>
                     </div>

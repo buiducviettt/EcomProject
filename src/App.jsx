@@ -1,8 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRoutes } from './routes';
+import { privateRoutes, publicRoutes } from './routes';
 import 'normalize.css';
 import './responsive.scss';
+import ProtectedRoute from './routes/Protected Routes';
 
 function App() {
   return (
@@ -13,6 +14,13 @@ function App() {
             const Page = route.component;
             return <Route key={index} path={route.path} element={<Page />} />;
           })}
+          {privateRoutes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={<ProtectedRoute component={route.component} />}
+            />
+          ))}
         </Routes>
       </div>
     </Router>
