@@ -3,8 +3,11 @@ import Image from '../../../../assets/image/Images';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import { AuthContext } from '../../../Account/AccountContext';
 import { CartContext } from '../../../../pages/Cart/CartContext';
+import Button from '../../../Button';
 import {
   faMagnifyingGlass,
   faCartShopping,
@@ -215,27 +218,37 @@ const Header = () => {
 
               {/* Khi chưa đăng nhập qua trang đăng nhập , có rồi thì hover dropdown */}
               {user ? (
-                <div className={styles.userIcon} onClick={handleUserIconClick}>
-                  <FontAwesomeIcon icon={faUser} />
-                  {showDropdown && (
-                    <div className={styles.dropdown}>
-                      <Link to="/account" className={styles.dropdownItem}>
-                        Thông tin
-                      </Link>
-                      <button
-                        onClick={handleLogout}
-                        className={styles.dropdownItem}
-                      >
-                        Đăng xuất
-                      </button>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link to="/account">
-                  <FontAwesomeIcon icon={faUser} />
-                </Link>
-              )}
+  <div className={styles.userIcon}>
+    <Tippy
+      content={
+        <div className={styles.dropdown}>
+          <Link to="/account" className="mb-3 text-center">
+            Thông tin
+          </Link>
+          <Button
+            className={styles.signoutbtn}
+           onClick={handleLogout}
+           actionName="Sign out"/>
+           
+        </div>
+      }
+      interactive={true}
+      placement="bottom"
+      onClickOutside={() => setShowDropdown(false)}
+      visible={showDropdown}
+      arrow={true}
+    >
+      <div onClick={handleUserIconClick}>
+        <FontAwesomeIcon icon={faUser} />
+      </div>
+    </Tippy>
+  </div>
+) : (
+  <Link to="/account">
+    <FontAwesomeIcon icon={faUser} />
+  </Link>
+)}
+
             </div>
           </div>
         </div>

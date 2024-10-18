@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import styles from './dressstyle.module.scss';
 
-const StyleItem = React.memo(({ title, image }) => {
+const StyleItem = ({ title, image }) => {
     return (
         <div className={styles.dressStyle}>
             <div className={styles.itemImg}>
@@ -11,9 +10,7 @@ const StyleItem = React.memo(({ title, image }) => {
             </div>
         </div>
     );
-});
+};  
 
-// Set the display name for better debugging
-StyleItem.displayName = 'StyleItem';
 
 export default StyleItem;

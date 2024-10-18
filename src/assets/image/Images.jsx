@@ -8,6 +8,7 @@ import styleitem4 from './DressStyleCate/styleitem4.jpg';
 import styleitem5 from './DressStyleCate/styleitem5.jpg';
 import styleitem6 from './DressStyleCate/styleitem6.jpg';
 import styleitem7 from './DressStyleCate/styleitem7.jpg';
+import cartempty from './Gif/cartempty.gif'
 const Image = {
   logo,
   bannerHome,
@@ -19,5 +20,6 @@ const Image = {
   styleitem5,
   styleitem6,
   styleitem7,
+  cartempty
 };
 export default Image;

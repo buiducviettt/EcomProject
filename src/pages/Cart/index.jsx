@@ -5,6 +5,7 @@ import styles from './cart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../components/Button';
+import Image from '../../assets/image/Images';
 const Cart = () => {
   const { cart, removeProduct } = useContext(CartContext);
   const [total, setTotal] = useState(0);
@@ -37,6 +38,9 @@ const Cart = () => {
       <DefaultLayout>
         <div className="container">
           <h1 className={styles.titleEmpty}>Your cart is empty</h1>
+          <div className={`${styles.cartEmpty} d-flex justify-content-center`}>
+            <img style={{width:"70rem"}} src={Image.cartempty} alt="" />
+          </div>
         </div>
       </DefaultLayout>
     );

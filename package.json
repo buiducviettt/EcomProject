@@ -38,7 +38,8 @@
     "react-tippy": "^1.4.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.13",
-    "swiper": "^11.1.14"
+    "swiper": "^11.1.14",
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
