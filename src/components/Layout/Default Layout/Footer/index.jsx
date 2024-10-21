@@ -14,6 +14,7 @@ const Footer = () => {
   const [form, setForm] = useState('');
   const [noti, setNoti] = useState('');
   const [isMobile, setIsMobile] = useState(false);
+  const [isValidEmail, setIsValidEmail] = useState(false);
   const handleChange = (e) => {
     const newValue = e.target.value;
     setForm(newValue);
@@ -41,13 +42,20 @@ const Footer = () => {
       setNoti('');
       return;
     }
-    if (!form.includes('@')) {
+
+    // Regex kiểm tra định dạng email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(form)) {
       setNoti('Email không hợp lệ');
+      setIsValidEmail(false);
     } else {
       setNoti(`Đã gửi mail đến: ${form}`);
+      setIsValidEmail(true);
       setForm('');
     }
   };
+
   return (
     <>
       <div className={`container mt-5 ${styles.formFooter}`}>
@@ -66,7 +74,11 @@ const Footer = () => {
               />
             </div>
 
-            {noti && <p className={styles.notification}>{noti}</p>}
+            {noti && (
+              <p className={isValidEmail ? styles.sucess : styles.error}>
+                {noti}
+              </p>
+            )}
             <Button
               onClick={handleClick}
               className={styles.ctaButton}

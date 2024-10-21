@@ -5,15 +5,20 @@ import { AuthContext } from '../AccountContext';
 import { useContext, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Image from '../../../assets/image/Images';
+
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [username, setUsername] = useState('');
   const [password, setPassWord] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false); // trạng thái loading
+  const [success, setSuccess] = useState(''); // trạng thái thông báo thành công
   const navigate = useNavigate();
-  const handleSubmit = () => {
-    // tao tai khoan mat khau admin
 
+  const handleSubmit = () => {
+    setLoading(true); // bật trạng thái loading
+
+    // tao tai khoan mat khau admin
     const userData = 'buiducviet';
     const passwordData = 'buiducviet';
     const someInfo = {
@@ -22,24 +27,31 @@ const Login = () => {
       email: 'buiducviet@gmail.com',
     };
 
-    if (username === userData && password === passwordData) {
-      // đăng nhập thành công
-      const user = {
-        username: userData,
-        country: someInfo.country,
-        phone: someInfo.phone,
-        email: someInfo.email,
-      };
-      localStorage.setItem('user', JSON.stringify(user));
-      setError('');
-      // gọi phương thức
-      login(user);
+    // Giả lập một chút thời gian xử lý
+    setTimeout(() => {
+      if (username === userData && password === passwordData) {
+        const user = {
+          username: userData,
+          country: someInfo.country,
+          phone: someInfo.phone,
+          email: someInfo.email,
+        };
+        localStorage.setItem('user', JSON.stringify(user));
+        setError('');
+        login(user);
+        setSuccess('Đăng nhập thành công!'); // thông báo thành công
 
-      navigate('/'); // về HOME
-    } else {
-      setError('Username or Password is incorrect!');
-    }
+        setTimeout(() => {
+          setLoading(false); // tắt loading
+          navigate('/'); // điều hướng về trang Home
+        }, 1000); // Chuyển sau 1 giây
+      } else {
+        setLoading(false); // tắt loading
+        setError('Username or Password is incorrect!');
+      }
+    }, 2000); // Giả lập thời gian xử lý 2 giây
   };
+
   return (
     <DefaultLayout>
       <div className={`container ${styles.title}`}>
@@ -64,8 +76,8 @@ const Login = () => {
                   onChange={(e) => setPassWord(e.target.value)}
                   placeholder="Type the password : buiducviet"
                 />
-                {/*Nếu có lỗi */}
                 {error && <p style={{ color: 'red' }}>{error}</p>}
+                {success && <p style={{ color: 'green' }}>{success}</p>}
                 <div className={styles.ctr}>
                   <div className={styles.savePass}>
                     <input type="checkbox" />
@@ -80,7 +92,8 @@ const Login = () => {
                 <Button
                   onClick={handleSubmit}
                   className={styles.submit}
-                  actionName="Log in"
+                  actionName={loading ? 'Logging in...' : 'Log in'} // Hiển thị loading trên button
+                  disabled={loading} // Vô hiệu hóa button khi đang loading
                 />
               </div>
             </div>
@@ -95,4 +108,5 @@ const Login = () => {
     </DefaultLayout>
   );
 };
+
 export default Login;

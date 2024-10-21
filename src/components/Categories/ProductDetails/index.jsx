@@ -17,6 +17,7 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState('');
   const [quantity, setQuantity] = useState(1);
   const { addProduct } = useContext(CartContext);
+  const [activeTab, setActiveTab] = useState('');
 
   // Noti
   const handleSubmit = () => {
@@ -26,6 +27,17 @@ const ProductDetail = () => {
       setNoti('');
     }, 2000);
   };
+  //set Tab
+  const tabs = [
+    {
+      id: 'details',
+      label: 'Product Details',
+    },
+    {
+      id: 'rating',
+      label: 'Rating',
+    },
+  ];
   // Gọi API
   useEffect(() => {
     const fetchAPI = async () => {
@@ -106,6 +118,42 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
+        {/* {tab} */}
+        <div className={`mt-5 ${styles.tabsWrapper}`}>
+          <div className={styles.tabBtn}>
+            {tabs.map((tab) => {
+              return (
+                <button
+                  // className="btn btn-primary"
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={activeTab === tab.id ? styles.active : ''}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+          <div className={styles.tabContent}>
+            {activeTab === 'details' && (
+              <div>
+                <h1>{product.title}</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Consectetur at magnam facilis dolorum placeat delectus alias
+                  accusantium ipsa. Dolorem maiores repellat laudantium laborum
+                  corporis obcaecati error ratione nulla, nostrum placeat.
+                </p>
+              </div>
+            )}
+            {activeTab === 'rating' && (
+              <div>
+                <p>Thông tin đánh giá sản phẩm sẽ ở đây.</p>
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="container mt-5">
           <ProductList
             title="You might also like"

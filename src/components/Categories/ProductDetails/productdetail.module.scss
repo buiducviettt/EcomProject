@@ -28,3 +28,19 @@ width: 50%;
     margin-top: 20px;
 
 }
+.tabsWrapper {
+    .tabBtn {
+        button {
+            margin-right: 20px;
+            font-size: 3rem;
+            border: none;
+            background: white;
+            position: relative; // cần để line hiển thị dưới
+
+            // Hiệu ứng line khi active
+            &.active {
+                border-bottom: 2px solid black; // tạo đường line dưới
+            }
+        }
+    }
+}

@@ -57,8 +57,11 @@
     text-align: left !important;
   }
 }
-.notification {
-  color: green;
+.sucess {
+  color: green !important;
+}
+.error{
+  color: red;
 }
 //responsive
 @media (max-width: 768px) {
