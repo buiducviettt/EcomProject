@@ -8,6 +8,7 @@ import StarRating from '../../StarRating';
 import QuantityNumber from '../../QuantityNumber';
 import ProductList from '../Product List';
 import { CartContext } from '../../../pages/Cart/CartContext';
+import FeedbackLayout from '../../Feedback/Layout/FeedbackLayout';
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -148,7 +149,20 @@ const ProductDetail = () => {
             )}
             {activeTab === 'rating' && (
               <div>
-                <p>Thông tin đánh giá sản phẩm sẽ ở đây.</p>
+                <div className="row">
+                  <div className="col-12 col-xs-12 col-sm-6 mt-3">
+                    <FeedbackLayout name="Việt" body="Good Product!" />
+                  </div>
+                  <div className="col-12 col-xs-12 col-sm-6 mt-3">
+                    <FeedbackLayout name="Việt Bùi" body="Good Product!" />
+                  </div>
+                  <div className="col-12 col-xs-12 col-sm-6 mt-3">
+                    <FeedbackLayout name="Việt Đức Bùi" body="Good Product!" />
+                  </div>
+                  <div className="col-12 col-xs-12 col-sm-6 mt-3">
+                    <FeedbackLayout name="Việt Đức Bùi" body="Good Product!" />
+                  </div>
+                </div>
               </div>
             )}
           </div>

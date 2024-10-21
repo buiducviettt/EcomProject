@@ -8,6 +8,7 @@
 }
 .titleCategory{
     transition: all 0.3s ease-in;
-    &:hover {
-        font-weight: bold;
-    }}
+}
+    .active{
+     font-weight: bold;
+    }

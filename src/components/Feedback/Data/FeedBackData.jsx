@@ -49,18 +49,8 @@ const FeedbackData = () => {
       <h2>OUR HAPPY CUSTOMERS</h2>
       <div className={`mt-5`}>
         {isMobile ? (
-          <Swiper
-            speed={2000}
-            modules={[Autoplay]}
-            spaceBetween={50}
-            slidesPerView={1}
-            autoplay={{
-              delay: 1000,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-          >
-            {feedbacks.map((feedback) => (
+          <Swiper spaceBetween={50} slidesPerView={1}>
+            {feedbacks.slice(0, 4).map((feedback) => (
               <SwiperSlide key={feedback.id}>
                 <div className={styles.inner}>
                   <FeedbackLayout name={feedback.name} body={feedback.body} />
@@ -78,7 +68,6 @@ const FeedbackData = () => {
               delay: 1000, // Không có độ trễ
               disableOnInteraction: false, // Tiếp tục auto sau khi tương tác
             }}
-            loop={true} // Lặp lại các slide
           >
             {feedbacks.map((feedback) => (
               <SwiperSlide key={feedback.id}>

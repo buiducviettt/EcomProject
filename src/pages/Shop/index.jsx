@@ -46,7 +46,9 @@ const Shop = () => {
                     fontSize: '2rem',
                     textTransform: 'uppercase',
                   }}
-                  className={styles.titleCategory}
+                  className={`${styles.titleCategory} ${
+                    category === selectedCategory ? styles.active : ''
+                  }`}
                   key={category}
                   onClick={() => {
                     setSelectedCategory(category);
