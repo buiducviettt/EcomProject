@@ -167,7 +167,7 @@ const Header = () => {
                         <table className={styles.resultTable}>
                           <thead>
                             <tr>
-                              <th>Title</th>
+                              <th>Product</th>
                               <th>Price</th>
                             </tr>
                           </thead>
@@ -175,7 +175,13 @@ const Header = () => {
                             {searchResult.map((item) => (
                               <tr key={item.id}>
                                 <td>
-                                  <Link to={`/product/${item.id}`}>
+                                  <Link
+                                    to={`/product/${item.id}`}
+                                    onClick={() => {
+                                      setSearchInput(''); // Reset input
+                                      setSearchResult([]); // Reset kết quả tìm kiếm
+                                    }}
+                                  >
                                     {item.title}
                                   </Link>
                                 </td>
@@ -218,37 +224,36 @@ const Header = () => {
 
               {/* Khi chưa đăng nhập qua trang đăng nhập , có rồi thì hover dropdown */}
               {user ? (
-  <div className={styles.userIcon}>
-    <Tippy
-      content={
-        <div className={styles.dropdown}>
-          <Link to="/account" className="mb-3 text-center">
-            Thông tin
-          </Link>
-          <Button
-            className={styles.signoutbtn}
-           onClick={handleLogout}
-           actionName="Sign out"/>
-           
-        </div>
-      }
-      interactive={true}
-      placement="bottom"
-      onClickOutside={() => setShowDropdown(false)}
-      visible={showDropdown}
-      arrow={true}
-    >
-      <div onClick={handleUserIconClick}>
-        <FontAwesomeIcon icon={faUser} />
-      </div>
-    </Tippy>
-  </div>
-) : (
-  <Link to="/account">
-    <FontAwesomeIcon icon={faUser} />
-  </Link>
-)}
-
+                <div className={styles.userIcon}>
+                  <Tippy
+                    content={
+                      <div className={styles.dropdown}>
+                        <Link to="/account" className="mb-3 text-center">
+                          Thông tin
+                        </Link>
+                        <Button
+                          className={styles.signoutbtn}
+                          onClick={handleLogout}
+                          actionName="Sign out"
+                        />
+                      </div>
+                    }
+                    interactive={true}
+                    placement="bottom"
+                    onClickOutside={() => setShowDropdown(false)}
+                    visible={showDropdown}
+                    arrow={true}
+                  >
+                    <div onClick={handleUserIconClick}>
+                      <FontAwesomeIcon icon={faUser} />
+                    </div>
+                  </Tippy>
+                </div>
+              ) : (
+                <Link to="/account">
+                  <FontAwesomeIcon icon={faUser} />
+                </Link>
+              )}
             </div>
           </div>
         </div>

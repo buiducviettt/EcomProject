@@ -23,10 +23,19 @@ const Homepage = () => {
         <HomeBanner />
         <BrandsSection />
         <section data-aos="fade-up">
-          <ProductList category="men's clothing" title="NEW PRODUCT" />
+          <ProductList
+            isHome={true}
+            category="men's clothing"
+            title="NEW PRODUCT"
+            showFetch={false}
+          />
         </section>
         <section data-aos="fade-up">
-          <ProductList category="women's clothing" title="TOP SELLING" />
+          <ProductList
+            isHome={true}
+            category="women's clothing"
+            title="TOP SELLING"
+          />
         </section>
         <div
           className={`container mt-5 ${styles.dressStyles} `}

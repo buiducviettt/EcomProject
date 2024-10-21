@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const ProductList = ({ category, title }) => {
+const ProductList = ({ category, title, isHome = false }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setisMobile] = useState(window.innerWidth < 768);
@@ -73,7 +73,7 @@ const ProductList = ({ category, title }) => {
             {loading ? (
               <Skeleton count={1} height={300} width="100vw" />
             ) : (
-              products.map((product) => (
+              products.slice(0, isHome ? 4 : products.length).map((product) => (
                 <div className="col col-md-4 col-lg-3" key={product.id}>
                   <Link
                     to={`/product/${product.id}`}

@@ -21,7 +21,10 @@ const ProductDetail = () => {
   // Noti
   const handleSubmit = () => {
     addProduct(product, quantity);
-    setNoti(`Bạn đã thêm thành công ${quantity} sản phẩm vào giỏ`);
+    setNoti(`Bạn đã thêm thành công`);
+    setTimeout(() => {
+      setNoti('');
+    }, 2000);
   };
   // Gọi API
   useEffect(() => {
@@ -92,14 +95,14 @@ const ProductDetail = () => {
               <a href="">{`${product.category}`}</a>
               <h1>{product.title}</h1>
               <StarRating rating={product.rating.rate} />
-              <p className={styles.priceItem}>{`Price: ${product.price}`}</p>
+              <p className={styles.priceItem}>{`Price: $${product.price}`}</p>
               <p>{`${product.description}`}</p>
 
               <div className={styles.ctaWrapper}>
                 <QuantityNumber onQuantityChange={setQuantity} />
                 <Button onClick={handleSubmit} actionName="Add to Cart" />
               </div>
-              <p>{noti}</p>
+              <p style={{ color: 'green', fontWeight: 'bold' }}>{noti}</p>
             </div>
           </div>
         </div>

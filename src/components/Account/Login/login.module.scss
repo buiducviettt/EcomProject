@@ -1,23 +1,32 @@
 .title{
-    text-align: center;
+    text-align: left;
 }
 .inputTable{
-    padding: 40px 100px;
-    background: #F0F0F0;
     width: 100%;
     display: flex;
     justify-content: center;
     input ,label{
         font-size: 2rem;
     }
+    input{
+        margin: 5px 0 10px 0;
+    }
     .inner{
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 20px;
     }
     .submit{
         margin-top: 20px;
     }
          
+}
+.ctr{
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+    justify-content: space-between;
+}
+.imageWrapper{
+    padding: 0 20px;
 }

@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect } from 'react';
-import { json } from 'react-router-dom';
+// import { json } from 'react-router-dom';
 
 // tạo context bao gồm login logout
 export const AuthContext = createContext();
@@ -8,13 +8,13 @@ export const AuthProvider = ({ children }) => {
   //user
   const [user, setUser] = useState(null);
   // lưu vào database
-  useEffect(()=>{
-  const storeAccount = localStorage.getItem('user');
-  if(storeAccount){
-    setUser(JSON.parse(storeAccount));
-  }
-  },[])
-  
+  useEffect(() => {
+    const storeAccount = localStorage.getItem('user');
+    if (storeAccount) {
+      setUser(JSON.parse(storeAccount));
+    }
+  }, []);
+
   //login
   const login = (data) => {
     setUser(data);
@@ -24,10 +24,10 @@ export const AuthProvider = ({ children }) => {
   //logout
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('user'); 
+    localStorage.removeItem('user');
   };
   //check user log in chưa
-  const isLogin = user!==null;
+  const isLogin = user !== null;
 
   return (
     <AuthContext.Provider value={{ user, login, logout, isLogin }}>

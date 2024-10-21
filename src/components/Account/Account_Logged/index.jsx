@@ -7,21 +7,18 @@ const AccountLogged = () => {
     <DefaultLayout>
       <div className="container">
         <h1>Account Info</h1>
-        {
-          user ? (
-            <>
+        {user ? (
           <>
             <p>Username: {user.username}</p>
-            <p>Country: {user.country}</p> 
-            <p>Phone: {user.phone}</p> 
-            <p>Email: {user.email}</p> 
+            <p>Country: {user.country}</p>
+            <p>Phone: {user.phone}</p>
+            <p>Email: {user.email}</p>
           </>
-            </>
-          ): (<p>No user information available.</p>)
-              }
-    </div>
-
-  </DefaultLayout >
-  )
+        ) : (
+          <p>No user information available.</p>
+        )}
+      </div>
+    </DefaultLayout>
+  );
 };
 export default AccountLogged;

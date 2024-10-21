@@ -45,7 +45,7 @@ const HomeBanner = () => {
           </div>
           <div className={`col col-md-12 col-lg-6 ${styles.bannerHomeWrapper}`}>
             <div className={styles.bannerHome}>
-              <img src={Image.bannerHome} alt="" />
+              <img src={Image.styleitem1} alt="" />
             </div>
             <div className={`${styles.decor} ${styles.decor1}`}>
               <img src={Image.star} alt="" />

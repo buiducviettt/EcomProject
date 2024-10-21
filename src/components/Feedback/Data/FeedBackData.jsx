@@ -19,7 +19,6 @@ const FeedbackData = () => {
         );
         const data = await response.json();
         setFeedback(data);
-        
       } catch (error) {
         console.error(`The error is ${error}`);
       }

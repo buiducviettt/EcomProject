@@ -20,6 +20,9 @@ const Cart = () => {
     if (searchInput.trim()) {
       setAddVoucher(searchInput);
       setMessage('Voucher đã được add thành công');
+      setTimeout(() => {
+        setMessage('');
+      }, 1000);
       setSearchInput('');
     } else {
       setAddVoucher('');
@@ -39,7 +42,7 @@ const Cart = () => {
         <div className="container">
           <h1 className={styles.titleEmpty}>Your cart is empty</h1>
           <div className={`${styles.cartEmpty} d-flex justify-content-center`}>
-            <img style={{width:"70rem"}} src={Image.cartempty} alt="" />
+            <img style={{ width: '70rem' }} src={Image.cartempty} alt="" />
           </div>
         </div>
       </DefaultLayout>
@@ -114,7 +117,7 @@ const Cart = () => {
                     value={searchInput}
                   />
                 </div>
-                {message && <p>{message}</p>}
+                {message && <p style={{ color: 'green' }}>{message}</p>}
                 <Button
                   actionName="Check out"
                   className={styles.checkOut}
