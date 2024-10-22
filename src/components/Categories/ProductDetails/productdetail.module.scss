@@ -45,3 +45,24 @@ width: 50%;
         }
     }
 }
+@media (max-width: 768px) {
+.gallery{
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+}
+.thumbnail{
+    margin-top: 0;
+    margin-left: 20px;
+}
+  
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // Styles cho tablet
+}
+
+@media (min-width: 1025px) {
+    // Styles cho desktop
+}

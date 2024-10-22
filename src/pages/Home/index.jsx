@@ -27,7 +27,6 @@ const Homepage = () => {
             isHome={true}
             category="men's clothing"
             title="NEW PRODUCT"
-            showFetch={false}
           />
         </section>
         <section data-aos="fade-up">
@@ -37,25 +36,22 @@ const Homepage = () => {
             title="TOP SELLING"
           />
         </section>
-        <div
-          className={`container mt-5 ${styles.dressStyles} `}
-          data-aos="fade-up"
-        >
+        <div className={`container mt-5 ${styles.dressStyles} `}>
           <h2>BROWSE BY DRESS STYLE</h2>
           <div className={`row mt-5 ${styles.row}`}>
             <div className="col- col-md-4">
-              <StyleItem title="Casual" image={Image.styleitem1} />
+              <StyleItem title="jewelery" image={Image.styleitem1} />
             </div>
             <div className="col - col-md-8 ">
-              <StyleItem title="Formal" image={Image.styleitem2} />
+              <StyleItem title="men's clothing" image={Image.styleitem2} />
             </div>
           </div>
           <div className={`row mt-5 ${styles.row}`}>
             <div className="col- col-md-8 ">
-              <StyleItem title="Party" image={Image.styleitem3} />
+              <StyleItem title="women's clothing" image={Image.styleitem3} />
             </div>
             <div className="col- col-md-4">
-              <StyleItem title="Gym" image={Image.styleitem4} />
+              <StyleItem title="electronics" image={Image.styleitem4} />
             </div>
           </div>
         </div>

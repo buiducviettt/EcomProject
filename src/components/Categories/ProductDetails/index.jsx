@@ -9,6 +9,9 @@ import QuantityNumber from '../../QuantityNumber';
 import ProductList from '../Product List';
 import { CartContext } from '../../../pages/Cart/CartContext';
 import FeedbackLayout from '../../Feedback/Layout/FeedbackLayout';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css'; // Đảm bảo đã import CSS
+import 'swiper/css'; // Import Swiper styles
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -19,6 +22,23 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const { addProduct } = useContext(CartContext);
   const [activeTab, setActiveTab] = useState('');
+  const [isMobile, setisMobile] = useState(false);
+  // isMobile
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-vars
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setisMobile(true);
+      } else {
+        setisMobile(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // Noti
   const handleSubmit = () => {
@@ -63,62 +83,108 @@ const ProductDetail = () => {
   return (
     <DefaultLayout>
       <div className="container mt-5">
-        <div className="row">
-          <div className={`col col-md-6`}>
-            <div className={styles.wrapper}>
-              <div className="row">
-                <div className="col col-md-4">
-                  <div className={styles.gallery}>
+        {isMobile ? (
+          <div className="row">
+            <div className={`col col-md-6`}>
+              <div className={styles.wrapper}>
+                <Swiper spaceBetween={0} slidesPerView={2}>
+                  {' '}
+                  {/* Hiển thị 3 ảnh */}
+                  <SwiperSlide>
                     <img
                       src={product.image}
                       alt=""
                       className={styles.selectedImage}
                       onClick={() => setSelectedImage(product.image)}
                     />
+                  </SwiperSlide>
+                  <SwiperSlide>
                     <img
                       src={Image.styleitem5}
                       alt=""
                       className={styles.thumbnail}
                       onClick={() => setSelectedImage(Image.styleitem5)}
                     />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={Image.styleitem5}
+                      alt=""
+                      className={styles.thumbnail}
+                      onClick={() => setSelectedImage(Image.styleitem5)}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
                     <img
                       src={Image.styleitem6}
                       alt=""
                       className={styles.thumbnail}
                       onClick={() => setSelectedImage(Image.styleitem6)}
                     />
-                    <img
-                      src={Image.styleitem7}
-                      alt=""
-                      className={styles.thumbnail}
-                      onClick={() => setSelectedImage(Image.styleitem7)}
-                    />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="row">
+            <div className={`col col-md-6`}>
+              <div className={styles.wrapper}>
+                <div className="row">
+                  <div className="col col-md-4">
+                    <div className={styles.gallery}>
+                      <img
+                        src={product.image}
+                        alt=""
+                        className={styles.selectedImage}
+                        onClick={() => setSelectedImage(product.image)}
+                      />
+                      <img
+                        src={Image.styleitem5}
+                        alt=""
+                        className={styles.thumbnail}
+                        onClick={() => setSelectedImage(Image.styleitem5)}
+                      />
+                      <img
+                        src={Image.styleitem6}
+                        alt=""
+                        className={styles.thumbnail}
+                        onClick={() => setSelectedImage(Image.styleitem6)}
+                      />
+                      <img
+                        src={Image.styleitem7}
+                        alt=""
+                        className={styles.thumbnail}
+                        onClick={() => setSelectedImage(Image.styleitem7)}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="col col-md-8">
-                  <div className={styles.productImage}>
-                    <img src={selectedImage} alt="" />
+                  <div className="col col-md-8">
+                    <div className={styles.productImage}>
+                      <img src={selectedImage} alt="" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col col-md-6">
-            <div className={styles.contentInner}>
-              <a href="">{`${product.category}`}</a>
-              <h1>{product.title}</h1>
-              <StarRating rating={product.rating.rate} />
-              <p className={styles.priceItem}>{`Price: $${product.price}`}</p>
-              <p>{`${product.description}`}</p>
+            <div className="col col-md-6">
+              <div className={styles.contentInner}>
+                <a href="">{`${product.category}`}</a>
+                <h1>{product.title}</h1>
+                <StarRating rating={product.rating.rate} />
+                <p className={styles.priceItem}>{`Price: $${product.price}`}</p>
+                <p>{`${product.description}`}</p>
 
-              <div className={styles.ctaWrapper}>
-                <QuantityNumber onQuantityChange={setQuantity} />
-                <Button onClick={handleSubmit} actionName="Add to Cart" />
+                <div className={styles.ctaWrapper}>
+                  <QuantityNumber onQuantityChange={setQuantity} />
+                  <Button onClick={handleSubmit} actionName="Add to Cart" />
+                </div>
+                <p style={{ color: 'green', fontWeight: 'bold' }}>{noti}</p>
               </div>
-              <p style={{ color: 'green', fontWeight: 'bold' }}>{noti}</p>
             </div>
           </div>
-        </div>
+        )}
+
         {/* {tab} */}
         <div className={`mt-5 ${styles.tabsWrapper}`}>
           <div className={styles.tabBtn}>

@@ -5,13 +5,25 @@ import styles from './shop.module.scss';
 import Skeleton from 'react-loading-skeleton';
 import { CartContext } from '../Cart/CartContext';
 import { useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 const Shop = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All Products');
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const { addProduct } = useContext(CartContext);
-
+  //useLocation
+  const location = useLocation();
+  const queryParam = new URLSearchParams(location.search);
+  const initCate = queryParam.get('category');
+  useEffect(() => {
+    if (initCate) {
+      setSelectedCategory(initCate);
+    }
+  }, [initCate]);
+  useEffect(() => {
+    window.scrollTo(0, 0); // Cuộn lên đầu trang
+  }, [location]); // Thực hiện khi location thay đổi (mỗi khi URL thay đổi)
   useEffect(() => {
     const fetchCategories = async () => {
       try {
