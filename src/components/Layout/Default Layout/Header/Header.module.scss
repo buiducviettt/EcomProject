@@ -41,6 +41,12 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
                 width: 100%;
                
     }
+    .visible{
+        display: block;
+    }
+    .hide{
+        display: none;
+    }
 }
  
 .hdSearch input {
@@ -148,6 +154,11 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
 
 // RESPONSIVE
 @media (max-width: 768px) {
+    .hdSearch{
+        input{
+            width: 80%;
+        }
+    }
 
   .topHeader {
     padding: 30px 0 ;
@@ -157,7 +168,7 @@ $header-height: 38px; // Định nghĩa biến cho chiều cao
   }
 }
  .mainHeader {
-     .navLink,.hdSearch {
+     .navLink {
          display: none;
      }
      .searchMobile{

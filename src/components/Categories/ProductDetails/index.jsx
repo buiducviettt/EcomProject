@@ -21,7 +21,7 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState('');
   const [quantity, setQuantity] = useState(1);
   const { addProduct } = useContext(CartContext);
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab, setActiveTab] = useState('details');
   const [isMobile, setisMobile] = useState(false);
   // isMobile
   useEffect(() => {
@@ -84,48 +84,55 @@ const ProductDetail = () => {
     <DefaultLayout>
       <div className="container mt-5">
         {isMobile ? (
-          <div className="row">
-            <div className={`col col-md-6`}>
-              <div className={styles.wrapper}>
-                <Swiper spaceBetween={0} slidesPerView={2}>
-                  {' '}
-                  {/* Hiển thị 3 ảnh */}
-                  <SwiperSlide>
-                    <img
-                      src={product.image}
-                      alt=""
-                      className={styles.selectedImage}
-                      onClick={() => setSelectedImage(product.image)}
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src={Image.styleitem5}
-                      alt=""
-                      className={styles.thumbnail}
-                      onClick={() => setSelectedImage(Image.styleitem5)}
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src={Image.styleitem5}
-                      alt=""
-                      className={styles.thumbnail}
-                      onClick={() => setSelectedImage(Image.styleitem5)}
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src={Image.styleitem6}
-                      alt=""
-                      className={styles.thumbnail}
-                      onClick={() => setSelectedImage(Image.styleitem6)}
-                    />
-                  </SwiperSlide>
-                </Swiper>
+          <>
+            <h3>{product.title}</h3>
+            <div className="row mt-5">
+              <div className={styles.productImage}>
+                <img src={selectedImage} alt="" />
               </div>
             </div>
-          </div>
+            <div className="row mt-5">
+              <div className={`col col-md-6`}>
+                <div className={styles.wrapper}>
+                  <Swiper spaceBetween={0} slidesPerView={2}>
+                    {/* Hiển thị 3 ảnh */}
+                    <SwiperSlide>
+                      <img
+                        src={product.image}
+                        alt=""
+                        className={styles.selectedImage}
+                        onClick={() => setSelectedImage(product.image)}
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img
+                        src={Image.styleitem5}
+                        alt=""
+                        className={styles.thumbnail}
+                        onClick={() => setSelectedImage(Image.styleitem5)}
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img
+                        src={Image.styleitem5}
+                        alt=""
+                        className={styles.thumbnail}
+                        onClick={() => setSelectedImage(Image.styleitem5)}
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img
+                        src={Image.styleitem6}
+                        alt=""
+                        className={styles.thumbnail}
+                        onClick={() => setSelectedImage(Image.styleitem6)}
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+              </div>
+            </div>
+          </>
         ) : (
           <div className="row">
             <div className={`col col-md-6`}>
@@ -204,7 +211,7 @@ const ProductDetail = () => {
           <div className={styles.tabContent}>
             {activeTab === 'details' && (
               <div>
-                <h1>{product.title}</h1>
+                <h3>{product.title}</h3>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Consectetur at magnam facilis dolorum placeat delectus alias

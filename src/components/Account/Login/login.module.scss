@@ -30,3 +30,18 @@
 .imageWrapper{
     padding: 0 20px;
 }
+@media (max-width: 768px) {
+.imageWrapper{
+    margin: 20px 0 20px 0;
+
+}
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // Styles cho tablet
+}
+
+@media (min-width: 1025px) {
+    // Styles cho desktop
+}

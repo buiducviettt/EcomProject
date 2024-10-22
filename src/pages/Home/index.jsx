@@ -55,7 +55,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <section data-aos="fade-up">
+        <section>
           <FeedbackData />
         </section>
       </DefaultLayout>

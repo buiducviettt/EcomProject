@@ -22,11 +22,21 @@ const Header = () => {
   const [searchInput, setSearchInput] = useState(''); // State lưu giá trị tìm kiếm
   const [searchResult, setSearchResult] = useState([]); // State lưu kết quả tìm kiếm
   const [isSearching, setisSearching] = useState(false); // State kiểm tra quá trình tìm kiếm
+  const [showSearch, setShowSearch] = useState(false);
   const [products, setProducts] = useState([]); // State lưu tất cả sản phẩm từ API
   const totalItem = cart.reduce((total, item) => total + item.quantity, 0);
   const { user, logout } = useContext(AuthContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
+
+  //toogle Search khi nhấn nút search ở mobile
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+    if (showSearch) {
+      setSearchInput(''); // Reset input khi ẩn ô tìm kiếm
+      setSearchResult([]); // Reset kết quả tìm kiếm
+    }
+  };
 
   // Xử lý sự kiện cuộn trang để thay đổi CSS
   useEffect(() => {
@@ -152,7 +162,11 @@ const Header = () => {
 
             {/* Search Input */}
             <div className={styles.hdSearch}>
-              <div className={styles.inputSearch}>
+              <div
+                className={`${styles.inputSearch} ${
+                  showSearch ? styles.visible : styles.hide
+                }`}
+              >
                 <input
                   type="text"
                   className="form-control"
@@ -210,9 +224,13 @@ const Header = () => {
 
             {/* Cart and Account Icons */}
             <div className={styles.hdAction}>
+              {/* ////////////////////////////////mobile search/////////////////////////////////////////////// */}
               {/* For Mobile Search */}
               <div className={styles.searchMobile}>
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  onClick={toggleSearch}
+                />
               </div>
               <div className={styles.cart}>
                 <Link to="/cart">
