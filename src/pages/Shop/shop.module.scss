@@ -12,3 +12,21 @@
     .active{
      font-weight: bold;
     }
+
+
+    //responsive
+        @media (max-width: 768px) {
+            .cateWrapper{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+              
+            }
+        }
+    
+        @media (min-width: 769px) and (max-width: 1024px) {
+            // Styles cho tablet
+        }
+    
+        @media (min-width: 1025px) {
+            // Styles cho desktop
+        }

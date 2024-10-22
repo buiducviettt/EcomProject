@@ -50,25 +50,27 @@ const Shop = () => {
             {loading ? (
               <Skeleton count={5} height={30} />
             ) : (
-              categories.map((category) => (
-                <li
-                  style={{
-                    cursor: 'pointer',
-                    marginTop: '20px',
-                    fontSize: '2rem',
-                    textTransform: 'uppercase',
-                  }}
-                  className={`${styles.titleCategory} ${
-                    category === selectedCategory ? styles.active : ''
-                  }`}
-                  key={category}
-                  onClick={() => {
-                    setSelectedCategory(category);
-                  }}
-                >
-                  {category}
-                </li>
-              ))
+              <div className={styles.cateWrapper}>
+                {categories.map((category) => (
+                  <li
+                    style={{
+                      cursor: 'pointer',
+                      marginTop: '20px',
+                      fontSize: '2rem',
+                      textTransform: 'uppercase',
+                    }}
+                    className={`${styles.titleCategory} ${
+                      category === selectedCategory ? styles.active : ''
+                    }`}
+                    key={category}
+                    onClick={() => {
+                      setSelectedCategory(category);
+                    }}
+                  >
+                    {category}
+                  </li>
+                ))}
+              </div>
             )}
           </div>
           <div className="col col-md-8">

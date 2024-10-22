@@ -1,0 +1,23 @@
+.bm-burger-button {
+    display: block;
+    position: absolute;
+    width: 30px; // Chiều rộng của icon
+    height: 24px; // Chiều cao của icon
+    left: 20px; // Vị trí bên phải
+   bottom: 40px; // Vị trí trên cùng
+}
+
+.bm-burger-bars {
+    background: #000; // Màu sắc của gạch
+    border-radius: 3px; // Bo tròn
+    height: 1px; // Chiều cao của gạch
+    width: 100%; // Chiều rộng 100%
+    margin: 4px 0; // Khoảng cách giữa các gạch
+}
+
+.bm-menu {
+    width: 100%;
+    background: white; // Màu nền menu
+    padding: 2.5em 1.5em 0; // Padding cho menu
+    font-size: 1.15em; // Kích thước chữ
+}

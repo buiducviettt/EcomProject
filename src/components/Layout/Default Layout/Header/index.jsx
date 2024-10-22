@@ -8,6 +8,7 @@ import 'tippy.js/dist/tippy.css';
 import { AuthContext } from '../../../Account/AccountContext';
 import { CartContext } from '../../../../pages/Cart/CartContext';
 import Button from '../../../Button';
+import Hamburger from '../../../HamburgerMenu';
 import {
   faMagnifyingGlass,
   faCartShopping,
@@ -110,6 +111,10 @@ const Header = () => {
           <div
             className={`${styles.inner} d-flex flex-row justify-content-between align-items-center`}
           >
+            {/* MobileHeader */}
+            <div className={styles.hamburger}>
+              <Hamburger />
+            </div>
             {/* Logo */}
             <Link to="/">
               <div className={styles.logo}>
