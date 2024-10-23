@@ -46,6 +46,13 @@ width: 50%;
     }
 }
 @media (max-width: 768px) {
+    .btnMobile{
+        width: 100%;
+    }
+    .ctaWrapper{
+        align-items: center;
+        justify-content: center;
+    }
 .gallery{
     display: flex; 
     flex-direction: row;

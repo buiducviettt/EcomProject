@@ -130,6 +130,16 @@ const ProductDetail = () => {
                     </SwiperSlide>
                   </Swiper>
                 </div>
+
+                <div className={`mt-5 ${styles.ctaWrapper}`}>
+                  <QuantityNumber onQuantityChange={setQuantity} />
+                </div>
+                <Button
+                  className={`mt-5 ${styles.btnMobile} `}
+                  onClick={handleSubmit}
+                  actionName="Add to Cart"
+                />
+                <p style={{ color: 'green', fontWeight: 'bold' }}>{noti}</p>
               </div>
             </div>
           </>

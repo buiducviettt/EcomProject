@@ -4,6 +4,7 @@ import Shop from '../pages/Shop';
 import Cart from '../pages/Cart';
 import AccountLogged from '../components/Account/Account_Logged';
 import Login from '../components/Account/Login';
+import Checkout from '../pages/Checkout';
 
 export const publicRoutes = [
   {
@@ -26,15 +27,18 @@ export const publicRoutes = [
     path: '/product/:productId',
     component: ProductDetail,
   },
-  //deploy
-  // {
-  //   path: '/account',
-  //   component: AccountLogged,
-  // },
+  {
+    path: '/checkout',
+    component: Checkout,
+  },
 ];
 export const privateRoutes = [
   {
     path: '/account',
     component: AccountLogged,
   },
+  // {
+  //   path: '/checkout',
+  //   component: Checkout,
+  // },
 ];

@@ -5,14 +5,13 @@ import styles from './cart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../components/Button';
+import { Link } from 'react-router-dom';
 import Image from '../../assets/image/Images';
 const Cart = () => {
   const { cart, removeProduct } = useContext(CartContext);
   const [total, setTotal] = useState(0);
   const [message, setMessage] = useState('');
-  const handleSubmit = () => {
-    alert('Tính năng đang build');
-  };
+  const handleSubmit = () => {};
   // addVoucher
   const [searchInput, setSearchInput] = useState('');
   const [addVoucher, setAddVoucher] = useState('');
@@ -118,11 +117,13 @@ const Cart = () => {
                   />
                 </div>
                 {message && <p style={{ color: 'green' }}>{message}</p>}
-                <Button
-                  actionName="Check out"
-                  className={styles.checkOut}
-                  onClick={handleSubmit}
-                />
+                <Link to="/checkout">
+                  <Button
+                    actionName="Check out"
+                    className={styles.checkOut}
+                    onClick={handleSubmit}
+                  />
+                </Link>
               </div>
             </div>
           </div>
