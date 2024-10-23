@@ -15,28 +15,16 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
+import SearchInput from '../../../SearchFunction/SearchInput';
 
 const Header = () => {
   const { cart } = useContext(CartContext);
   const [isScroll, setisScroll] = useState(false);
-  const [searchInput, setSearchInput] = useState(''); // State lưu giá trị tìm kiếm
-  const [searchResult, setSearchResult] = useState([]); // State lưu kết quả tìm kiếm
-  const [isSearching, setisSearching] = useState(false); // State kiểm tra quá trình tìm kiếm
-  const [showSearch, setShowSearch] = useState(false);
   const [products, setProducts] = useState([]); // State lưu tất cả sản phẩm từ API
   const totalItem = cart.reduce((total, item) => total + item.quantity, 0);
   const { user, logout } = useContext(AuthContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
-
-  //toogle Search khi nhấn nút search ở mobile
-  const toggleSearch = () => {
-    setShowSearch(!showSearch);
-    if (showSearch) {
-      setSearchInput(''); // Reset input khi ẩn ô tìm kiếm
-      setSearchResult([]); // Reset kết quả tìm kiếm
-    }
-  };
 
   // Xử lý sự kiện cuộn trang để thay đổi CSS
   useEffect(() => {
@@ -76,30 +64,6 @@ const Header = () => {
     setShowDropdown(false);
     navigate('/');
   };
-
-  const handleSearchChange = (e) => {
-    setSearchInput(e.target.value);
-  };
-
-  useEffect(() => {
-    setisSearching(true);
-    const delayDebounce = setTimeout(() => {
-      if (searchInput) {
-        const filteredProducts = products.filter((product) =>
-          product.title.toLowerCase().includes(searchInput.toLowerCase()),
-        );
-        setSearchResult(filteredProducts);
-        setisSearching(false);
-      } else {
-        setSearchResult([]);
-      }
-    }, 500);
-
-    return () => {
-      clearTimeout(delayDebounce);
-      setisSearching(false);
-    };
-  }, [searchInput, products]);
 
   return (
     <div className={styles.wrapper}>
@@ -161,76 +125,17 @@ const Header = () => {
             </div>
 
             {/* Search Input */}
-            <div className={styles.hdSearch}>
-              <div
-                className={`${styles.inputSearch} ${
-                  showSearch ? styles.visible : styles.hide
-                }`}
-              >
-                <input
-                  type="text"
-                  className="form-control"
-                  value={searchInput}
-                  onChange={handleSearchChange}
-                  placeholder="Search for products..."
-                />
-              </div>
-              {/* Hiển thị kết quả tìm kiếm trong bảng */}
-              {searchInput && (
-                <div className={styles.searchResult}>
-                  {isSearching ? (
-                    <p>Searching....</p>
-                  ) : (
-                    <div>
-                      {searchResult.length > 0 ? (
-                        <table className={styles.resultTable}>
-                          <thead>
-                            <tr>
-                              <th>Product</th>
-                              <th>Price</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {searchResult.map((item) => (
-                              <tr key={item.id}>
-                                <td>
-                                  <Link
-                                    to={`/product/${item.id}`}
-                                    onClick={() => {
-                                      setSearchInput(''); // Reset input
-                                      setSearchResult([]); // Reset kết quả tìm kiếm
-                                    }}
-                                  >
-                                    {item.title}
-                                  </Link>
-                                </td>
-                                <td>${item.price}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      ) : (
-                        <p>No results found.</p>
-                      )}
-                    </div>
-                  )}
-                </div>
-              )}
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className={styles.searchIcon}
-              />
-            </div>
+            <SearchInput
+              products={products}
+              className={styles.inputSearchHide}
+            />
 
             {/* Cart and Account Icons */}
             <div className={styles.hdAction}>
               {/* ////////////////////////////////mobile search/////////////////////////////////////////////// */}
               {/* For Mobile Search */}
               <div className={styles.searchMobile}>
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlass}
-                  onClick={toggleSearch}
-                />
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
               </div>
               <div className={styles.cart}>
                 <Link to="/cart">
