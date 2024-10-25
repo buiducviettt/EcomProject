@@ -1,6 +1,5 @@
 import { StrictMode } from 'react';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
+
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import GlobalStyle from './components/GlobalStyles/index.jsx';

@@ -27,18 +27,18 @@ export const publicRoutes = [
     path: '/product/:productId',
     component: ProductDetail,
   },
-  {
-    path: '/checkout',
-    component: Checkout,
-  },
+  // {
+  //   path: '/checkout',
+  //   component: Checkout,
+  // },
 ];
 export const privateRoutes = [
   {
     path: '/account',
     component: AccountLogged,
   },
-  // {
-  //   path: '/checkout',
-  //   component: Checkout,
-  // },
+  {
+    path: '/checkout',
+    component: Checkout,
+  },
 ];
