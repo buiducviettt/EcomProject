@@ -9,11 +9,8 @@ import { AuthContext } from '../../../Account/AccountContext';
 import { CartContext } from '../../../../pages/Cart/CartContext';
 import Button from '../../../Button';
 import Hamburger from '../../../HamburgerMenu';
-import {
-  faMagnifyingGlass,
-  faCartShopping,
-  faUser,
-} from '@fortawesome/free-solid-svg-icons';
+import SearchMobile from '../../../SearchFunction/SearchInput/SearchMobile';
+import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import SearchInput from '../../../SearchFunction/SearchInput';
 
@@ -134,9 +131,10 @@ const Header = () => {
             <div className={styles.hdAction}>
               {/* ////////////////////////////////mobile search/////////////////////////////////////////////// */}
               {/* For Mobile Search */}
-              <div className={styles.searchMobile}>
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </div>
+              <SearchMobile
+                products={products}
+                className={styles.searchMobile}
+              />
               <div className={styles.cart}>
                 <Link to="/cart">
                   <FontAwesomeIcon

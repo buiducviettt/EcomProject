@@ -6,6 +6,9 @@ import Button from '../../components/Button';
 import { useContext } from 'react';
 import { CartContext } from '../Cart/CartContext';
 import { Link } from 'react-router-dom';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import Modal from '../../components/ModalBox';
 const Checkout = () => {
   //step
   const [currentStep, setCurrentStep] = useState(1);
@@ -21,6 +24,7 @@ const Checkout = () => {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [note, setNote] = useState('');
+  const [showModal, setShowModal] = useState(false);
   const handleSubmit = () => {
     const orderData = {
       name,
@@ -87,7 +91,7 @@ const Checkout = () => {
     <DefaultLayout>
       <div className="container">
         <div className="row">
-          <div className="col col-6">
+          <div className="col-12 col-sm-6">
             {currentStep === 1 && (
               <div className={styles.formWrapper}>
                 <div className={styles.inner}>
@@ -270,13 +274,34 @@ const Checkout = () => {
                       setCurrentStep(currentStep - 1);
                     }}
                   />
-                  <Button className="mt-5" actionName={' Checkout '} />
+
+                  <div>
+                    <Button
+                      className="mt-5"
+                      actionName={'Checkout'}
+                      onClick={() => setShowModal(true)}
+                    />
+                  </div>
                 </>
               ) : null}
             </div>
+            <Modal show={showModal} onClose={() => setShowModal(false)}>
+              <h1 style={{ textAlign: 'center' }}>Thank you for your order</h1>
+              <p style={{ textAlign: 'center' }}>
+                We will contact you for a few minutes
+              </p>
+              <div className={styles.orderDetails}>
+                <p>Your Order</p>
+                <p>Name: {name}</p>
+                <p>Phone: {phone}</p>
+                <p>Email: {email}</p>
+                <p>Note: {note}</p>
+                <h3>Total: ${total}</h3>
+              </div>
+            </Modal>
           </div>
 
-          <div className="col col-6">
+          <div className={`col-12 col-sm-6 ${styles.cartOrder} mt-5`}>
             <h3>Your order</h3>
             <ul className={styles.orderWrapper}>
               <div className={styles.inner}>

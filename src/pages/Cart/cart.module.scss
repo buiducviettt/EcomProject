@@ -68,3 +68,25 @@ h3{
         font-size: 1rem;
     }
 }
+ //responsive
+ @media (max-width: 768px) {
+ .cartItem{
+    .cartImage{
+        width: 100%;
+    }
+    .title{
+        h3{
+            font-size: 2rem !important;
+        }
+    }
+ }
+
+ }
+
+ @media (min-width: 769px) and (max-width: 1024px) {
+     // Styles cho tablet
+ }
+
+ @media (min-width: 1025px) {
+     // Styles cho desktop
+ }
