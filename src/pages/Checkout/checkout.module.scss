@@ -17,8 +17,10 @@
 
 }
 .orderWrapper{
-    max-height: 55rem;
+    position: relative;
     overflow: auto;
+    max-height: 55rem;
+
     .itemOrder {
             margin-top: 30px;
             display: flex;
@@ -29,4 +31,19 @@
             width: 10rem;
     
         }
+}
+.boxwrapper{
+    border: 1px solid rgb(228, 226, 226);
+    padding: 20px 20px;
+    .inner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    }
+}
+.buttonCTA{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
