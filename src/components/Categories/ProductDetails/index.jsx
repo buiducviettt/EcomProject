@@ -222,12 +222,7 @@ const ProductDetail = () => {
             {activeTab === 'details' && (
               <div>
                 <h3>{product.title}</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Consectetur at magnam facilis dolorum placeat delectus alias
-                  accusantium ipsa. Dolorem maiores repellat laudantium laborum
-                  corporis obcaecati error ratione nulla, nostrum placeat.
-                </p>
+                <p>{product.description}</p>
               </div>
             )}
             {activeTab === 'rating' && (

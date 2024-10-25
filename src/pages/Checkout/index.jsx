@@ -24,6 +24,7 @@ const Checkout = () => {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [note, setNote] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('');
   const [showModal, setShowModal] = useState(false);
   const handleSubmit = () => {
     const orderData = {
@@ -222,8 +223,10 @@ const Checkout = () => {
                     <div className={styles.inner}>
                       <span> Bank Direct</span>
                       <input
-                        type="checkbox"
-                        id="direct"
+                        onChange={(e) => setPaymentMethod(e.target.value)}
+                        type="radio"
+                        value="creditCard"
+                        checked={paymentMethod === 'creditCard'}
                         className="form-check-input"
                       />
                     </div>
@@ -242,8 +245,10 @@ const Checkout = () => {
                     <div className={styles.inner}>
                       <span> COD</span>
                       <input
-                        type="checkbox"
-                        id="cod"
+                        onChange={(e) => setPaymentMethod(e.target.value)} // Cập nhật phương thức thanh toán
+                        type="radio"
+                        value="COD"
+                        checked={paymentMethod === 'COD'}
                         className="form-check-input"
                       />
                     </div>
@@ -296,6 +301,8 @@ const Checkout = () => {
                 <p>Phone: {phone}</p>
                 <p>Email: {email}</p>
                 <p>Note: {note}</p>
+                <p>Payment Method : {paymentMethod}</p>
+
                 <h3>Total: ${total}</h3>
               </div>
             </Modal>
