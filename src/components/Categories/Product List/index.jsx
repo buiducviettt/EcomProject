@@ -6,8 +6,7 @@ import ProductItem from '../Products Item';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-const ProductList = ({ category, title, isHome = false }) => {
+const ProductList = ({ category, title, isHome = false, priceRange }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setisMobile] = useState(window.innerWidth < 768);
@@ -21,7 +20,13 @@ const ProductList = ({ category, title, isHome = false }) => {
             : `https://fakestoreapi.com/products/`,
         );
         const data = await response.json();
-        setProducts(data);
+        const filteredProducts = data.filter(
+          (product) =>
+            (category === '' || product.category === category) &&
+            product.price >= priceRange[0] &&
+            product.price <= priceRange[1],
+        );
+        setProducts(filteredProducts);
       } catch (error) {
         console.error(`Error from : ${error}`);
       } finally {
@@ -38,7 +43,7 @@ const ProductList = ({ category, title, isHome = false }) => {
         window.removeEventListener('resize', handleResize);
       };
     };
-  }, [category]);
+  }, [category, priceRange]);
   //  if (loading) return <div>Loading...</div>;
 
   return (
