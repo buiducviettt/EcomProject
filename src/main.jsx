@@ -6,15 +6,18 @@ import GlobalStyle from './components/GlobalStyles/index.jsx';
 import { CartProvider } from './pages/Cart/CartContext/index.jsx';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { AuthProvider } from './components/Account/AccountContext/index.jsx';
+import { FlashSaleProvider } from './pages/FlashSale/FlashSaleContext/index.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
-      <CartProvider>
-        <GlobalStyle>
-          <App />
-        </GlobalStyle>
-      </CartProvider>
-    </AuthProvider>
+    <FlashSaleProvider>
+      <AuthProvider>
+        <CartProvider>
+          <GlobalStyle>
+            <App />
+          </GlobalStyle>
+        </CartProvider>
+      </AuthProvider>
+    </FlashSaleProvider>
   </StrictMode>,
 );

@@ -5,8 +5,13 @@ import Cart from '../pages/Cart';
 import AccountLogged from '../components/Account/Account_Logged';
 import Login from '../components/Account/Login';
 import Checkout from '../pages/Checkout';
+import FlashSale from '../pages/FlashSale';
 
 export const publicRoutes = [
+  {
+    path: '/sale',
+    component: FlashSale,
+  },
   {
     path: '/',
     component: Homepage,

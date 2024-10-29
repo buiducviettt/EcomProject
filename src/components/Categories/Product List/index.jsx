@@ -1,15 +1,18 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styles from './productlist.module.scss';
 import ProductItem from '../Products Item';
 // import Button from "../../Button";
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { FlashSaleContext } from '../../../pages/FlashSale/FlashSaleContext';
 const ProductList = ({ category, title, isHome = false, priceRange }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setisMobile] = useState(window.innerWidth < 768);
+  // flashsale
+  const { isFlashSaleActive } = useContext(FlashSaleContext);
   //callAPI
   useEffect(() => {
     const fetchAPI = async () => {
@@ -78,16 +81,25 @@ const ProductList = ({ category, title, isHome = false, priceRange }) => {
             {loading ? (
               <Skeleton count={1} height={300} width="100vw" />
             ) : (
-              products.slice(0, isHome ? 4 : products.length).map((product) => (
-                <div className="col col-md-4 col-lg-3" key={product.id}>
-                  <Link
-                    to={`/product/${product.id}`}
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                  >
-                    <ProductItem product={product} />
-                  </Link>
-                </div>
-              ))
+              products.slice(0, isHome ? 4 : products.length).map((product) => {
+                const flashSalePrice = isFlashSaleActive
+                  ? product.price * 0.5
+                  : product.price;
+                return (
+                  <div className="col col-md-4 col-lg-3" key={product.id}>
+                    <Link
+                      to={`/product/${product.id}`}
+                      style={{ textDecoration: 'none', color: 'inherit' }}
+                    >
+                      <ProductItem
+                        isFlashSale={isFlashSaleActive}
+                        flashSalePrice={flashSalePrice}
+                        product={product}
+                      />
+                    </Link>
+                  </div>
+                );
+              })
             )}
           </div>
         </div>

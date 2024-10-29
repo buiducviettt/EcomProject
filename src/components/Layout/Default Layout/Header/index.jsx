@@ -101,7 +101,7 @@ const Header = () => {
               <Link
                 to="/sale"
                 className={styles.link}
-                onClick={(e) => e.preventDefault()} // tạm thời chưa deploy
+                // tạm thời chưa deploy
               >
                 On Sale
               </Link>

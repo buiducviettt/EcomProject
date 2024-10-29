@@ -1,0 +1,42 @@
+.flashsale{
+    background: #410D0D;
+    width:100%;
+    height: 80vh;
+    position: relative;
+    .inner{
+        width: 100%;
+       
+       
+        .innerText {
+            position: absolute;
+                z-index: 100;
+            display: flex;
+            flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            width: 100%;           
+                h1 {
+                    color: white;
+                    font-size: 15rem;
+                    font-weight: 400;
+                }
+               .timeCounterStyles{
+                h1{
+                    margin: auto;
+                    font-size: 10rem;
+                    font-family: 'Be Vietnam Pro';
+                }
+               }
+               
+            }
+                       
+    }
+         .timeStampWrapper{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+                bottom: 0;
+         }
+    
+}

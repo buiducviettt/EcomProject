@@ -24,6 +24,17 @@
     .rating{
         font-size: 2rem;
     }
+    .priceWrapper{
+        display: flex !important;
+        align-items: center;
+        gap: 20px;
+        flex-direction: row;
+        .discountedPrice {
+                color: black;
+        
+            }
+    }
+   
 }
 //responsive
 @media (max-width: 768px) {

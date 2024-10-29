@@ -9,11 +9,7 @@ const Hamburger = ({ className }) => {
       <Link to="/shop" className="menu-item">
         Shop
       </Link>
-      <Link
-        to="/sale"
-        className="menu-item"
-        onClick={(e) => e.preventDefault()} // tạm thời chưa deploy
-      >
+      <Link to="/sale" className="menu-item">
         On Sale
       </Link>
       <Link

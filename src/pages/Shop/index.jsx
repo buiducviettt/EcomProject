@@ -21,7 +21,7 @@ const Shop = () => {
   const initCate = queryParam.get('category');
   //price
   const debouncePrice = useCallback(
-    debounce((newRange) => setPriceRange(newRange), 300),
+    debounce((newRange) => setPriceRange(newRange), 500),
     [],
   );
 

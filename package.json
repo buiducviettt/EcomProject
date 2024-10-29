@@ -28,6 +28,7 @@
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
+    "moment": "^2.30.1",
     "normalize.css": "^8.0.1",
     "rc-input-number": "^9.2.0",
     "rc-slider": "^11.1.7",
