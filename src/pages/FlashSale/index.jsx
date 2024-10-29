@@ -10,7 +10,7 @@ const FlashSale = () => {
   const priceRange = [0, 1000];
   const { setIsFlashSaleActive, setFlashSaleDuration } =
     useContext(FlashSaleContext);
-  const durationInSeconds = 30;
+  const durationInSeconds = 10;
   useEffect(() => {
     setIsFlashSaleActive(true); // Bắt đầu flash sale
     setFlashSaleDuration(durationInSeconds); // Đặt thời gian cho flash sale
