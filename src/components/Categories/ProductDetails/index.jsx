@@ -106,26 +106,26 @@ const ProductDetail = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                       <img
-                        src={Image.styleitem5}
+                        src={Image.styleitem1}
                         alt=""
                         className={styles.thumbnail}
-                        onClick={() => setSelectedImage(Image.styleitem5)}
+                        onClick={() => setSelectedImage(Image.styleitem1)}
                       />
                     </SwiperSlide>
                     <SwiperSlide>
                       <img
-                        src={Image.styleitem5}
+                        src={Image.styleitem2}
                         alt=""
                         className={styles.thumbnail}
-                        onClick={() => setSelectedImage(Image.styleitem5)}
+                        onClick={() => setSelectedImage(Image.styleitem2)}
                       />
                     </SwiperSlide>
                     <SwiperSlide>
                       <img
-                        src={Image.styleitem6}
+                        src={Image.styleitem3}
                         alt=""
                         className={styles.thumbnail}
-                        onClick={() => setSelectedImage(Image.styleitem6)}
+                        onClick={() => setSelectedImage(Image.styleitem3)}
                       />
                     </SwiperSlide>
                   </Swiper>
@@ -157,22 +157,22 @@ const ProductDetail = () => {
                         onClick={() => setSelectedImage(product.image)}
                       />
                       <img
-                        src={Image.styleitem5}
+                        src={Image.styleitem1}
                         alt=""
                         className={styles.thumbnail}
-                        onClick={() => setSelectedImage(Image.styleitem5)}
+                        onClick={() => setSelectedImage(Image.styleitem1)}
                       />
                       <img
-                        src={Image.styleitem6}
+                        src={Image.styleitem2}
                         alt=""
                         className={styles.thumbnail}
-                        onClick={() => setSelectedImage(Image.styleitem6)}
+                        onClick={() => setSelectedImage(Image.styleitem2)}
                       />
                       <img
-                        src={Image.styleitem7}
+                        src={Image.styleitem3}
                         alt=""
                         className={styles.thumbnail}
-                        onClick={() => setSelectedImage(Image.styleitem7)}
+                        onClick={() => setSelectedImage(Image.styleitem3)}
                       />
                     </div>
                   </div>
