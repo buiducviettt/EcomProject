@@ -27,17 +27,17 @@ const HomeBanner = () => {
               </Link>
               <div className={`mt-5 d-flex ${styles.numberDetails}`}>
                 <div className="row w-100">
-                  <div className="col-6 col-md-3 d-flex justify-content-start">
-                    <SpecialNumber number="200+" title="International Brands" />
+                  <div className="col-6 col-md-3">
+                    <SpecialNumber number={200} title="International Brands" />
                   </div>
-                  <div className="col-6 col-md-3 d-flex justify-content-start">
+                  <div className="col-6 col-md-3">
                     <SpecialNumber
-                      number="2,000+"
+                      number={2000}
                       title="High-Quality Products"
                     />
                   </div>
-                  <div className="col-6 col-md-3 d-flex justify-content-start">
-                    <SpecialNumber number="30,000+" title="Happy Customers" />
+                  <div className="col-6 col-md-3">
+                    <SpecialNumber number={30000} title="Happy Customers" />
                   </div>
                 </div>
               </div>
