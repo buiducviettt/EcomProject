@@ -12,18 +12,10 @@ const Hamburger = ({ className }) => {
       <Link to="/sale" className="menu-item">
         On Sale
       </Link>
-      <Link
-        to="/new-arrival"
-        className="menu-item"
-        onClick={(e) => e.preventDefault()}
-      >
+      <Link to="/new-arrival" className="menu-item">
         New Arrivals
       </Link>
-      <Link
-        to="/brands"
-        className="menu-item"
-        onClick={(e) => e.preventDefault()}
-      >
+      <Link to="/brands" className="menu-item">
         Brands
       </Link>
     </Menu>

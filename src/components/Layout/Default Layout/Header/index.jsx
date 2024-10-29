@@ -105,18 +105,10 @@ const Header = () => {
               >
                 On Sale
               </Link>
-              <Link
-                to="/new-arrival"
-                className={styles.link}
-                onClick={(e) => e.preventDefault()}
-              >
+              <Link to="/new-arrival" className={styles.link}>
                 New Arrivals
               </Link>
-              <Link
-                to="/brands"
-                className={styles.link}
-                onClick={(e) => e.preventDefault()}
-              >
+              <Link to="/brands" className={styles.link}>
                 Brands
               </Link>
             </div>

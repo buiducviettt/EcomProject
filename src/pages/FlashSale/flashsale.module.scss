@@ -40,3 +40,26 @@
          }
     
 }
+
+
+@media (max-width: 768px) {
+.flashsale{
+    height: 50vh;
+    .innerText{
+        width: 100% ;
+        h1{
+            font-size: 5rem !important;
+        }
+    }
+   
+}
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // Styles cho tablet
+}
+
+@media (min-width: 1025px) {
+    // Styles cho desktop
+}

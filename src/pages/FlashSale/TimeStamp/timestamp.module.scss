@@ -10,3 +10,17 @@ border-top: 0 solid black;
     border-bottom: 1px solid black;
     border-left: 0 solid black;
 }
+@media (max-width: 768px) {
+ .wrapper{
+    padding: 10px 20px !important;
+ }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // Styles cho tablet
+}
+
+@media (min-width: 1025px) {
+    // Styles cho desktop
+}

@@ -9,7 +9,8 @@ export const FlashSaleProvider = ({ children }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsFlashSaleActive(false); // Hết thời gian flash sale
-    }, flashSaleDuration * 1000); //Chuyển đổi sang mili giây
+    }, flashSaleDuration * 1000);
+    //Chuyển đổi sang mili giây
     return () => clearTimeout(timer);
   }, [flashSaleDuration]);
   const value = {

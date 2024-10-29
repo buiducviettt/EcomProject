@@ -6,8 +6,16 @@ import AccountLogged from '../components/Account/Account_Logged';
 import Login from '../components/Account/Login';
 import Checkout from '../pages/Checkout';
 import FlashSale from '../pages/FlashSale';
+import NewArrival from '../pages/NewArrival';
+
+import Brands from '../pages/Brands';
 
 export const publicRoutes = [
+  { path: '/brands', component: Brands },
+  {
+    path: '/new-arrival',
+    component: NewArrival,
+  },
   {
     path: '/sale',
     component: FlashSale,
