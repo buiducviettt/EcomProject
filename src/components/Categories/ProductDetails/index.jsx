@@ -23,6 +23,7 @@ const ProductDetail = () => {
   const { addProduct } = useContext(CartContext);
   const [activeTab, setActiveTab] = useState('details');
   const [isMobile, setisMobile] = useState(false);
+  const priceRange = [0, 1000];
   // isMobile
   useEffect(() => {
     // eslint-disable-next-line no-unused-vars
@@ -250,6 +251,7 @@ const ProductDetail = () => {
           <ProductList
             title="You might also like"
             category={product.category}
+            priceRange={priceRange}
           />
         </div>
       </div>

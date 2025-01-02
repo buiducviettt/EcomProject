@@ -1,110 +1,97 @@
 .banner {
-    background: var(--background-color);
-    padding: 5rem 0;
-    position: relative;
-
+  background: var(--background-color);
+  padding: 5rem 0;
+  position: relative;
 }
 
 .inner {
-    h1 {
-        font-size: 6rem;
-    }
+  h1 {
+    font-size: 6rem;
+  }
 }
 
-
-
 .bannerHome {
-    width: 60rem;
+  width: 60rem;
 }
 
 .decor {
+  animation: pop 1.5s ease infinite;
+  /* Thêm hiệu ứng pop */
 
-    animation: pop 1.5s ease infinite;
-    /* Thêm hiệu ứng pop */
-
-    img {
-        width: 100%;
-        /* Đảm bảo ảnh SVG chiếm toàn bộ chiều rộng của div */
-        height: auto;
-        /* Giữ tỷ lệ khung hình */
-    }
+  img {
+    width: 100%;
+    /* Đảm bảo ảnh SVG chiếm toàn bộ chiều rộng của div */
+    height: auto;
+    /* Giữ tỷ lệ khung hình */
+  }
 }
 
 .decor.decor1 {
-    width: 10rem;
-    position: absolute;
-    top: 20px;
-    right: 20rem;
+  width: 10rem;
+  position: absolute;
+  top: 20px;
+  right: 20rem;
 }
 
 .decor.decor2 {
-    width: 5rem;
-    position: absolute;
-    top: 30%;
-    left: 50%;
+  width: 5rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
 }
 
 /* Định nghĩa hiệu ứng pop */
 @keyframes pop {
-    50% {
-        transform: scale(1.1);
-        /* Tăng kích thước lên 110% */
-        opacity: 1;
-        /* Tăng độ trong suốt lên 1 */
-    }
+  50% {
+    transform: scale(1.1);
+    /* Tăng kích thước lên 110% */
+    opacity: 1;
+    /* Tăng độ trong suốt lên 1 */
+  }
 
-    100% {
-        transform: scale(1);
-        /* Trở về kích thước bình thường */
-    }
+  100% {
+    transform: scale(1);
+    /* Trở về kích thước bình thường */
+  }
 }
-
-
-
 
 //RESPONSIVE
 @media (max-width: 768px) {
-   .banner {
-    .bannerHomeWrapper{
-        position: relative;
-        .decor1,.decor2{
-            position: absolute;
-        }
-        .decor1{
-            right: 0;
-            top: 0;
-        }
-        .decor2{
-            left: 0;
-           top: 40%;
-        }
+  .banner {
+    .bannerHomeWrapper {
+      position: relative;
+      .decor1,
+      .decor2 {
+        position: absolute;
+      }
+      .decor1 {
+        right: 0;
+        top: 0;
+      }
+      .decor2 {
+        left: 0;
+        top: 40%;
+      }
     }
-    h1{
-        font-size:3rem;
+    h1 {
+      font-size: 3rem;
     }
     .bannerHome {
-        position: relative;
-        
+      position: relative;
     }
-    .button{
-        width: 100%;
+    .button {
+      width: 100%;
     }
-    .numberDetails{
-        flex-direction: column;     
-        align-items: center;
+    .numberDetails {
+      flex-direction: row;
+      align-items: center;
     }
-
-   }
-   
-
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    // Styles cho tablet
-    
+  // Styles cho tablet
 }
 
 @media (min-width: 1025px) {
-
-    
 }

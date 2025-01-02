@@ -1,124 +1,110 @@
 $header-height: 38px; // Định nghĩa biến cho chiều cao
 .topHeader {
-    background-color: #000000; // Màu nền đen
-    width: 100%; // Độ rộng 100% của phần tử cha
-    height: $header-height; // Chiều cao cố định
-    padding: calc($header-height - 15px) 0; 
-    p{
-        margin-bottom: 0;
-        color: white;
-       
-    }// Padding trên/dưới là 5px nhỏ hơn chiều cao
-    a{
-        font-weight: bold;
-        font-size: 2rem;
-    }
+  background-color: #000000; // Màu nền đen
+  width: 100%; // Độ rộng 100% của phần tử cha
+  height: $header-height; // Chiều cao cố định
+  padding: calc($header-height - 15px) 0;
+  p {
+    margin-bottom: 0;
+    color: white;
+  } // Padding trên/dưới là 5px nhỏ hơn chiều cao
+  a {
+    font-weight: bold;
+    font-size: 2rem;
+  }
 }
 .mainHeader .inner {
-    padding: 35px 0;
+  padding: 35px 0;
 }
-.navLink,.hdAction {
-    display: flex;
-    gap: 2rem;
+.navLink,
+.hdAction {
+  display: flex;
+  gap: 2rem;
 }
-.navLink{
-    a{
-        font-size: 2rem;
-    }
+.navLink {
+  a {
+    font-size: 2rem;
+  }
 }
 .hdAction {
-    a{
-        font-size: 2rem;
-    }
+  a {
+    font-size: 2rem;
+  }
 }
 
 .scrolled {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
-    background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  background: white;
 }
 // Header.module.scss
 
 .wrapper {
-    position: relative; // Đảm bảo header có vị trí tương đối để chứa các phần tử con
+  position: relative; // Đảm bảo header có vị trí tương đối để chứa các phần tử con
 }
-.hdAction{
-    position: relative;
-    .cartCount {
-            position: absolute;
-            top: -10px;
-            right: 40%;
-            span{
-                color: red;
-                font-weight: bold;
-            }
-        }
-   
+.hdAction {
+  position: relative;
+  .cartCount {
+    position: absolute;
+    top: -10px;
+    right: 40%;
+    span {
+      color: red;
+      font-weight: bold;
+    }
+  }
 }
 .dropdown {
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    width: 300px;
-  }
- 
-  
-  
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  width: 300px;
+}
 
 // RESPONSIVE
 @media (max-width: 768px) {
-.inputSearchHide{
+  .inputSearchHide {
     display: none !important;
-}
+  }
 
   .topHeader {
-    padding: 30px 0 ;
-  a{
-    display: block;
-    text-align: center;   
+    padding: 30px 0;
+    a {
+      display: block;
+      text-align: center;
+    }
+  }
+  .mainHeader {
+    .navLink {
+      display: none;
+    }
+    .searchMobile {
+      font-size: 2rem;
+    }
+    .cartCount {
+      position: absolute;
+      right: 25px;
+    }
   }
 }
- .mainHeader {
-     .navLink {
-         display: none;
-     }
-     .searchMobile{
-        font-size: 2rem;
-     }
-     .cartCount{
-        position: absolute;
-        right: 25px;
-     }
-     
-     
-     
- }
-
-   
-}
 .userIcon {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    // Styles cho tablet
+  // Styles cho tablet
 }
 
 @media (min-width: 1025px) {
-    // Styles cho desktop
-    .searchMobile{
-        display: none;
-    }
-     .hamburger {
-             display: none;
-         }
+  // Styles cho desktop
+  .searchMobile {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
 }
- 
-
-
-
-
